@@ -9,3 +9,9 @@ body,
 html{
   font-family: "Gilroy-Light";
 }
+
+.wrapper {
+  @include container;
+  @include xs(padding, 0 15px);
+  @include md(padding, 0 30px);
+}

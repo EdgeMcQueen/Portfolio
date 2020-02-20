@@ -1,9 +1,12 @@
 // Преднастройки
 @import "stylesheets/_stylesheets.scss";
 
-body {
-  font-size: pt(16);
-}
 
 
 // Основные файлы
+@import "blocks/dropDownMenu";
+@import "blocks/header";
+@import "blocks/aboutMe";
+@import "blocks/skills";
+@import "blocks/portfolio";
+@import "blocks/contacts";

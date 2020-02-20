@@ -15,3 +15,15 @@ $(function(){
 
 	});
 });
+
+// burger menu
+
+(function(){
+	var burger = document.querySelector('.burger-container'),
+		nav = document.querySelector('.dropDown-menu');
+
+	burger.onclick = function() {
+		nav.classList.toggle('menu-opened');
+		burger.classList.toggle('burger-close');
+	}
+}());

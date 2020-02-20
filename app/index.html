@@ -13,24 +13,34 @@
 <body>
   <div class="wrapper">
   <header class="main-header">
-     <nav-dropDown>
-       <button class="nav-dopDown__close-btn"></button>
-       <ul class="nav-dropDown__list">
-         <li class="nav-dropDown__item"><a href="#" class="nav-dropDown__link">Главная</a></li>
-         <li class="nav-dropDown__item"><a href="#" class="nav-dropDown__link">О себе</a></li>
-         <li class="nav-dropDown__item"><a href="#" class="nav-dropDown__link">Навыки</a></li>
-         <li class="nav-dropDown__item"><a href="#" class="nav-dropDown__link">Портфолио</a></li>
-         <li class="nav-dropDown__item"><a href="#" class="nav-dropDown__link">Контакты</a></li>
-       </ul>
-     </nav-dropDown>
+     <nav class="nav">
+<!--Drop down menu-->
+       <div class="burger-container">
+         <div class="burger-icon">
+           <div class="burger-icon__bar burger-icon__topBar"></div>
+           <div class="burger-icon__bar burger-icon__cenBar"></div>
+           <div class="burger-icon__bar burger-icon__botBar"></div>
+         </div>
+       </div>
+       <div class="dropDown-menu">
+         <ul class="nav-dropDown">
+           <li class="nav-dropDown__item"><a href="#" class="nav-dropDown__link">Главная</a></li>
+           <li class="nav-dropDown__item"><a href="#" class="nav-dropDown__link">О себе</a></li>
+           <li class="nav-dropDown__item"><a href="#" class="nav-dropDown__link">Навыки</a></li>
+           <li class="nav-dropDown__item"><a href="#" class="nav-dropDown__link">Портфолио</a></li>
+           <li class="nav-dropDown__item"><a href="#" class="nav-dropDown__link">Контакты</a></li>
+         </ul>
+       </div>
+     </nav>
      <!-- end nav-dropDown menu-->
       <div class="header-content">
         <img src="" alt="" class="author__avatar">
         <p class="author__name">Муталов Сардор</p>
         <p class="author__description">
           Фронтенд-разработчик <br>
-          <span class="author__age"></span> лет, Липецк
+          <span class="author__age">28</span> лет, Липецк
         </p>
+        <img src="" alt="" class="author__photo">
       </div>
   </header>
 </div>
