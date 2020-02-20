@@ -1,18 +1,57 @@
 .main-header {
   @include row-flex();
-
   padding: 65px 0 85px;
+  @include sm(padding-top, 30px);
+}
+
+.nav {
+  @include col();
+  @include size(12);
+}
+
+.nav-menu {
+  position: relative;
+  list-style: none;
+  display: none;
+  @include col();
+  @include sm(display, flex);
+  justify-content: space-between;
+  margin: 0;
+  margin-bottom: 40px;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    border-bottom: 1px solid $bdr-grey;
+  }
+
+  &__item {
+
+  }
+
+  &__link {
+    display: block;
+    padding: 35px 0;
+    text-decoration: none;
+    @include font(pt(18), 800);
+    color: $link-grey;
+    &:hover, :active {
+      color: $link-dark;
+    }
+  }
+
+
 }
 
 .header-content {
   display: flex;
   flex-direction: column;
-  @include sm(flex-direction, row);
-  @include sm(justify-content, space-between);
+  @include sm(flex-flow, row wrap);
   @include col();
-  @include size-xs(8);
-  @include size-sm(12);
-  @include size-md(12);
+  @include size(12);
 }
 
 .author {
@@ -24,11 +63,27 @@
   }
   &__description {
     padding-top: 25px;
-    @include sm(align-self, flex-end);
+    @include sm(padding-left, 25%);
     @include font(pt(14),300);
   }
   &__age {
 
+  }
+}
+
+.author-photo {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+  margin-top: 50px;
+  overflow: hidden;
+  &__img {
+    width: 100%;
+    transition: $ease-10s;
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 }
 
