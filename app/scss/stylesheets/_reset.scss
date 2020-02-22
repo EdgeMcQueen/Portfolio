@@ -14,22 +14,7 @@ body * {
   transition: $ease-10s;
 }
 
-.wrapper {
-  @include container;
-  @include xs-block(){
-    padding-left: $fields;
-    padding-right: $fields;
-  };
-  @include sm-block(){
-    padding-left: $fields * 2;
-    padding-right: $fields * 2;
-  };
-}
-
-.section-headline {
-  padding-bottom: 15px;
-  margin-bottom: 15px;
-  font-family: 'Gilroy-ExtraBold';
-  @include font(pt(26),800);
-  text-align: center;
+a {
+  text-decoration: none;
+  color: $link-light;
 }

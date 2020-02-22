@@ -1,5 +1,5 @@
 .container {
-  max-width: 1200px;
+  max-width: 1440 px;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
@@ -161,20 +161,48 @@ body * {
   transition: all 1s ease;
 }
 
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 .wrapper {
-  max-width: 1200px;
+  max-width: 1440 px;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.section-headline {
+.section--headline {
   padding-bottom: 15px;
   margin-bottom: 15px;
   font-family: 'Gilroy-ExtraBold';
-  font-size: 2.16667rem;
+  font-size: 2.83333rem;
   font-weight: 800;
   text-align: center;
+}
+
+.section--wrapper {
+  padding: 75px 15px 85px;
+  text-align: center;
+  font-size: 1.33333rem;
+  font-weight: 300;
+}
+
+.section--grey {
+  background-color: #f1f1f1;
+}
+
+.main-link-btn {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  height: 2.625em;
+  padding: 12px;
+  border-radius: 50px;
+  background-color: #000000;
+  white-space: nowrap;
+  line-height: 1.5;
 }
 
 .dropDown-menu {
@@ -471,6 +499,58 @@ body * {
   transition: all 1s ease;
 }
 
+.contacts__more {
+  margin-bottom: 2.1875em;
+}
+
+.contacts__social {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 2.8125em;
+}
+
+.contacts__msg-link {
+  margin-bottom: 2.1875em;
+}
+
+.contacts .social__link {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 1.875em;
+}
+
+.contacts .social__icon {
+  width: 100%;
+}
+
+.contacts .social__icon--vk:hover,
+.contacts .social__icon--vk :active {
+  fill: #4b78a8;
+}
+
+.contacts .social__icon--tg:hover,
+.contacts .social__icon--tg :active {
+  fill: #43b0e5;
+}
+
+.contacts .social__icon--ins:hover,
+.contacts .social__icon--ins :active {
+  fill: #771ebe;
+}
+
+.contacts .social__icon--gh:hover,
+.contacts .social__icon--gh :active {
+  fill: #424242;
+}
+
 @media screen and (min-width: 320px) {
   .container {
     padding-left: 15px;
@@ -480,6 +560,10 @@ body * {
   .wrapper {
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  .section--wrapper {
+    padding: 100px 15px 105px;
   }
 
   .dropDown-menu {
@@ -545,6 +629,11 @@ body * {
   .author__description {
     margin-left: -webkit-calc(100% / 5);
     margin-left: calc(100% / 5);
+  }
+
+  .aboutMe__text {
+    max-width: 31.25em;
+    margin: 0 auto;
   }
 }
 

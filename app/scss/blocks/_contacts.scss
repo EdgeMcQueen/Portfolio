@@ -1,0 +1,46 @@
+.contacts {
+  &__more {
+    margin-bottom: em(35);
+  }
+
+  &__social {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: em(45);
+  }
+
+  &__msg-link {
+    margin-bottom: em(35);
+  }
+
+  & .social {
+    &__link {
+      display: inline-flex;
+      width: em(30);
+    }
+
+    &__icon {
+      width: 100%;
+      &--vk {
+        &:hover, :active {
+          fill: $icon-hover-vk;
+        }
+      }
+      &--tg {
+        &:hover, :active {
+          fill: $icon-hover-tg;
+        }
+      }
+      &--ins {
+        &:hover, :active {
+          fill: $icon-hover-ins-col-1st;
+        }
+      }
+      &--gh {
+        &:hover, :active {
+          fill: $icon-hover-gh;
+        }
+      }
+    }
+  }
+}
