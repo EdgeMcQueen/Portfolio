@@ -39,7 +39,7 @@ $fields: 15px;
 }
 
 @mixin container(){
-    max-width: 1440px;
+    max-width: $break_xl;
     margin: 0 auto;
     @include container-full();
 }

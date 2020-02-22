@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  padding: 55px 15px;
+  padding: 45px 15px;
   font-family: 'Gilroy-ExtraBold';
   @include col();
   @include sm(display, none);
@@ -91,7 +91,7 @@
   @include sm(display, none);
   z-index: 10;
   position: absolute;
-  right: 30px;
+  right: 15px;
   top: 65px;
   display: inline-block;
   width: 35px;

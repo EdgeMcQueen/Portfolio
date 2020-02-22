@@ -10,8 +10,26 @@ html{
   font-family: "Gilroy-Light";
 }
 
+body * {
+  transition: $ease-10s;
+}
+
 .wrapper {
   @include container;
-  @include xs(padding, 0 15px);
-  @include md(padding, 0 30px);
+  @include xs-block(){
+    padding-left: $fields;
+    padding-right: $fields;
+  };
+  @include sm-block(){
+    padding-left: $fields * 2;
+    padding-right: $fields * 2;
+  };
+}
+
+.section-headline {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  font-family: 'Gilroy-ExtraBold';
+  @include font(pt(26),800);
+  text-align: center;
 }

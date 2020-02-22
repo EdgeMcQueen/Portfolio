@@ -49,7 +49,11 @@
 .header-content {
   display: flex;
   flex-direction: column;
-  @include sm(flex-flow, row wrap);
+  @include sm-block(){
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  };
   @include col();
   @include size(12);
 }
@@ -63,8 +67,11 @@
   }
   &__description {
     padding-top: 25px;
-    @include sm(padding-left, 25%);
+    line-height: 2;
     @include font(pt(14),300);
+    @include sm-block(){
+      margin-left: calc(100% / 5);
+    };
   }
   &__age {
 
@@ -73,17 +80,15 @@
 
 .author-photo {
   display: flex;
-  position: relative;
   width: 100%;
-  flex-grow: 1;
+  height: 480px;
   margin-top: 50px;
   overflow: hidden;
-  &__img {
-    width: 100%;
-    transition: $ease-10s;
-    &:hover {
-      transform: scale(1.2);
-    }
-  }
+  background-image: url('https://images.unsplash.com/photo-1547093349-65cdba98369a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: $ease-10s;
+  @include xs(height, calc(480px / 1vh));
 }
 
