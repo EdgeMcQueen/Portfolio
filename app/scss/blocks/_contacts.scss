@@ -6,7 +6,10 @@
   &__social {
     display: flex;
     justify-content: space-between;
+    margin: 0 auto;
+    max-width: 350px;
     margin-bottom: em(45);
+
   }
 
   &__msg-link {
@@ -15,12 +18,10 @@
 
   & .social {
     &__link {
-      display: inline-flex;
-      width: em(30);
+      display: inline-block;
     }
 
     &__icon {
-      width: 100%;
       &--vk {
         &:hover, :active {
           fill: $icon-hover-vk;

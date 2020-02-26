@@ -29,3 +29,8 @@
     padding-right: $fields * 2;
   };
 }
+
+@mixin el-margin($val) {
+  margin-left: $val;
+  margin-right: $val;
+}

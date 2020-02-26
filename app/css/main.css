@@ -198,11 +198,17 @@ a {
   box-sizing: border-box;
   display: block;
   height: 2.625em;
+  margin: 0 auto;
   padding: 12px;
   border-radius: 50px;
   background-color: #000000;
   white-space: nowrap;
   line-height: 1.5;
+}
+
+.main-link-btn:hover,
+.main-link-btn :active {
+  background-color: #424242;
 }
 
 .dropDown-menu {
@@ -499,6 +505,10 @@ a {
   transition: all 1s ease;
 }
 
+.aboutMe__text {
+  margin: 0 auto 55px;
+}
+
 .contacts__more {
   margin-bottom: 2.1875em;
 }
@@ -512,6 +522,8 @@ a {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin: 0 auto;
+  max-width: 350px;
   margin-bottom: 2.8125em;
 }
 
@@ -520,15 +532,7 @@ a {
 }
 
 .contacts .social__link {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  width: 1.875em;
-}
-
-.contacts .social__icon {
-  width: 100%;
+  display: inline-block;
 }
 
 .contacts .social__icon--vk:hover,
@@ -592,6 +596,10 @@ a {
     padding-right: 30px;
   }
 
+  .main-link-btn {
+    max-width: 17.5rem;
+  }
+
   .dropDown-menu {
     display: none;
   }
@@ -633,7 +641,6 @@ a {
 
   .aboutMe__text {
     max-width: 31.25em;
-    margin: 0 auto;
   }
 }
 
