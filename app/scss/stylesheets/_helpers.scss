@@ -14,22 +14,6 @@
 	@return (($pt * 1.333333) / 16) +rem;
 }
 
-.container {
-  @include container();
-  @include sm(max-width, rem(510));
-  @include md(max-width, rem(690));
-  @include lg(max-width, rem(930));
-  @include xl(max-width, rem(1110));
-  @include xs-block(){
-    padding-left: $fields;
-    padding-right: $fields;
-  };
-  @include sm-block(){
-    padding-left: $fields * 2;
-    padding-right: $fields * 2;
-  };
-}
-
 @mixin el-margin($val) {
   margin-left: $val;
   margin-right: $val;

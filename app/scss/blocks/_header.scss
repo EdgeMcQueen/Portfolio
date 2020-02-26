@@ -17,7 +17,6 @@
   @include sm(display, flex);
   justify-content: space-between;
   margin: 0;
-  margin-bottom: 40px;
   &::after {
     content: '';
     position: absolute;
@@ -28,15 +27,14 @@
     border-bottom: 1px solid $bdr-grey;
   }
 
-  &__item {
-
-  }
-
   &__link {
     display: block;
     padding: 35px 0;
     text-decoration: none;
-    @include font(pt(18), 800);
+    @include font(pt(16), 800);
+    @include md-block() {
+      @include font(pt(18), 800);
+    }
     color: $link-grey;
     &:hover, :active {
       color: $link-dark;
@@ -49,6 +47,7 @@
 .header-content {
   display: flex;
   flex-direction: column;
+  margin-top: 40px;
   @include sm-block(){
     flex-direction: row;
     flex-wrap: wrap;
@@ -97,7 +96,11 @@
 .nav {
   position: relative;
   & .dropMenu-toggle {
-    position: absolute;
+    display: none;
+    @include sm-block() {
+      display: block;
+    }
+    position: fixed;
     left: 50%; transform: translate(-50%);
     bottom: -10px;
     width: 50px;
@@ -109,20 +112,55 @@
     -webkit-tap-highlight-color: transparent;
     &__icon {
       position: absolute;
-      top: -50%;
       left: 0;
+      top: -50%;
       width: 100%;
       height: 100%;
-      background-color: red;
+      background-color: $dropMenu-bg;
       border-radius: 50%;
     }
-    &__bar {
+    &__arrow {
+      position: absolute;
+      top: 50%;
+      left: calc(25%);
+      fill: $dropMenu-icon;
+      &:hover {
+        fill: $dropMenu-icon-action;
+      }
+    }
+  }
 
-      &--left {
+  &.dropMenu-show {
+    @extend .container;
+    padding: 0 !important;
+    position: fixed;
+    top: 0;
+    transform: translateX(15px);
+    background-color: $dropMenu-bg;
+    & .nav-menu {
+      animation: dropDown-animation ease 1s;
+      @keyframes dropDown-animation {
+        from { top: -110px; }
+        to { top: 0; }
+      }
+      &::after {
+        content: '';
+        display: none;
+      }
+      &__link {
 
       }
-      &--right {
+    }
 
+
+    & .dropMenu-toggle {
+      top: 94.2px !important;
+        @include md-block() {
+          top: 97.4px !important;
+        }
+      &__arrow {
+        transform: rotate(180deg);
+        fill: $dropMenu-icon-action;
       }
     }
   }
