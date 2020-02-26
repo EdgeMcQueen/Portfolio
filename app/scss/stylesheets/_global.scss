@@ -52,6 +52,7 @@
 .main-link-btn {
   box-sizing: border-box;
   display: block;
+  max-width: rem(280);
   height: em(42);
   margin: 0 auto;
   padding: 12px;
@@ -59,9 +60,6 @@
   background-color: $link-btn-bg;
   white-space: nowrap;
   line-height: 1.5;
-  @include sm-block() {
-    max-width: rem(280);
-  }
   &:hover, :active {
     background-color: $icon-hover-gh;
   }
