@@ -1,4 +1,4 @@
-.dropDown-menu {
+.burger-menu {
   position: absolute;
   top: 0;
   left: 0;
@@ -11,7 +11,7 @@
   margin: 0;
 }
 
-.nav-dropDown {
+.nav-burger {
   position: relative;
   display: none;
   width: 100%;
@@ -53,12 +53,13 @@
 } // end nav-dropDown
 
 
-.dropDown-menu.menu-opened {
+.burger-menu.burger-opened {
+  position: fixed;
   width: 100%;
   height: 150%;
   background-color: $main-1st;
 
-  & .nav-dropDown {
+  & .nav-burger {
     position: relative;
     display: block;
     width: 100%;
@@ -90,7 +91,7 @@
 .burger-container {
   @include sm(display, none);
   z-index: 10;
-  position: absolute;
+  position: fixed;
   right: 15px;
   top: 65px;
   display: inline-block;
@@ -131,10 +132,8 @@
   &__bar {
     width: 100%;
     height: 4px;
-    display: block;
     position: relative;
     background: $burger-btn;
-    transition-delay: 0s;
   }
 
   &__topBar {
