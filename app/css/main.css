@@ -148,6 +148,12 @@ html {
   font-family: "Gilroy-Light";
 }
 
+body * {
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
 a {
   text-decoration: none;
   color: #ffffff;
@@ -664,11 +670,6 @@ a {
     width: -webkit-calc(33.33333% - 1.875rem);
     width: calc(33.33333% - 1.875rem);
   }
-
-  .author-photo {
-    height: -webkit-calc(480px / 1vh);
-    height: calc(480px / 1vh);
-  }
 }
 
 @media screen and (min-width: 576px) {
@@ -729,6 +730,11 @@ a {
   .author__description {
     margin-left: -webkit-calc(100% / 5);
     margin-left: calc(100% / 5);
+  }
+
+  .author-photo {
+    height: -webkit-calc(480px / 1vh);
+    height: calc(480px / 1vh);
   }
 
   .nav .dropMenu-toggle {

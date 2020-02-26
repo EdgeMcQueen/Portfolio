@@ -10,6 +10,10 @@ html{
   font-family: "Gilroy-Light";
 }
 
+body * {
+  transition: $ease-5s;
+}
+
 a {
   text-decoration: none;
   color: $link-light;

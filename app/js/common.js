@@ -55,8 +55,23 @@ function scrollFunction() {
 	}
 }());
 
+$(document).ready(function() {
+	$('.nav-menu__link').click(function() {
+		if ( $('.nav').hasClass('dropMenu-show')) {
+			$('.nav').removeClass('dropMenu-show');
+		}
+	})
+	$('.nav-burger__link').click(function() {
+		if ( $('.burger-menu').hasClass('burger-opened') || $('.burger-container').hasClass('burger-close')) {
+			$('.burger-menu').removeClass('burger-opened');
+			$('.burger-container').removeClass('burger-close');
+		}
+	})
+});
+
 // smooth anchor scroll
 $(document).on('click', 'a[href^="#"]', function (event) {
+
 	event.preventDefault();
 
 	$('html, body').animate({

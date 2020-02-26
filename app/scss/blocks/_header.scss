@@ -88,7 +88,7 @@
   background-position: center;
   background-size: cover;
   transition: $ease-10s;
-  @include xs(height, calc(480px / 1vh));
+  @include sm(height, calc(480px / 1vh));
 }
 
 // fixed nav
