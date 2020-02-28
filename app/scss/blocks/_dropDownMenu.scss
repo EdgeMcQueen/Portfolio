@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  padding: 45px 15px;
+  padding: em(80) em(15);
   font-family: 'Gilroy-ExtraBold';
   @include col();
   @include sm(display, none);
@@ -19,39 +19,76 @@
   list-style: none;
 
   &__item {
-    margin-top: 5px;
+    margin-top: em(5);
     transform: scale(1.15) translateY(-30px);
-    /*&:nth-child(1) {
-      transition-delay: 0.49s;
-    }
-    &:nth-child(2) {
-      transition-delay: 0.42s;
-    }
-    &:nth-child(3) {
-      transition-delay: 0.35s;
-    }
-    &:nth-child(4) {
-      transition-delay: 0.28s;
-    }
-    &:nth-child(5) {
-      transition-delay: 0.21s;
-    }*/
-  } // end nav-dropDown__item
+  }
 
   &__link {
     display: block;
     position: relative;
     text-decoration: none;
     @include font(pt(24), 800);
-    line-height: 68px;
+    line-height: rem(68);
     color: $link-grey;
     &:hover, :active {
       color: $link-dark;
     }
-  }
-
+  } // end nav-dropDown__link
 } // end nav-dropDown
 
+.burger-container {
+  @include sm(display, none);
+  position: fixed;
+  z-index: 10;
+  right: $offset_xs_one_side;
+  top: em(20);
+  display: inline-block;
+  width: rem(35);
+  height: rem(20);
+  cursor: pointer;
+  transform: rotate(0deg);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  &.burger-close {
+    transform: rotate(90deg);
+    & .burger-icon {
+      &__topBar {
+        transform: translateY(5px) translateX(8px) rotate(45deg);
+      }
+      &__cenBar {
+        transform: translateY(12px) rotate(0deg);
+        display: none;
+      }
+      &__botBar {
+        transform: translateY(2px) translateX(8px) rotate(-45deg);
+      }
+    } // end burger-container .burger-icon
+  } // end burger-container.burger-close
+} // end burger-container
+
+.burger-icon {
+  width: 35px;
+  height: 20px;
+  position: relative;
+  display: block;
+  margin: -4px auto 0;
+  top: 50%;
+  &__bar {
+    width: 100%;
+    height: em(4);
+    position: relative;
+    background: $burger-btn;
+  }
+  &__topBar {
+    transform: translateY(0px) rotate(0deg);
+  }
+  &__cenBar {
+    transform: translateY(6px) rotate(0deg);
+  }
+  &__botBar {
+    transform: translateY(12px) rotate(0deg);
+  }
+} // end burger__icon
 
 .burger-menu.burger-opened {
   position: fixed;
@@ -70,83 +107,7 @@
     &__item {
       transform: scale(1) translateY(0px);
       opacity: 1;
-      /*&:nth-child(1) {
-        transition-delay: 0.27s;
-      }
-      &:nth-child(2) {
-        transition-delay: 0.34s;
-      }
-      &:nth-child(3) {
-        transition-delay: 0.41s;
-      }
-      &:nth-child(4) {
-        transition-delay: 0.48s;
-      }
-      &:nth-child(5) {
-        transition-delay: 0.55s;
-      }*/
     }
-  }
-}
-
-.burger-container {
-  @include sm(display, none);
-  z-index: 10;
-  position: fixed;
-  right: 15px;
-  top: 20px;
-  display: inline-block;
-  width: 35px;
-  height: 20px;
-  cursor: pointer;
-  transform: rotate(0deg);
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  &.burger-close {
-    transform: rotate(90deg);
-    & .burger-icon {
-
-      &__bar {
-      }
-      &__topBar {
-        transform: translateY(5px) translateX(8px) rotate(45deg);
-      }
-      &__cenBar {
-        transform: translateY(12px) rotate(0deg);
-        display: none;
-      }
-      &__botBar {
-        transform: translateY(2px) translateX(8px) rotate(-45deg);      }
-    }
-  } // end burger-container
-
-}
-
-.burger-icon {
-  width: 35px;
-  height: 20px;
-  position: relative;
-  display: block;
-  margin: -4px auto 0;
-  top: 50%;
-
-  &__bar {
-    width: 100%;
-    height: 4px;
-    position: relative;
-    background: $burger-btn;
-  }
-
-  &__topBar {
-    transform: translateY(0px) rotate(0deg);
-  }
-
-  &__cenBar {
-    transform: translateY(6px) rotate(0deg);
-  }
-
-  &__botBar {
-    transform: translateY(12px) rotate(0deg);
-  }
-} // end burger__icon
+  } // end .burger-menu.burger-opened .nav-burger
+} // end .burger-menu.burger-opened
 

@@ -1,6 +1,6 @@
 .main-header {
   @include row-flex();
-  padding: 65px 0 85px;
+  padding: em(65) 0 em(85);
   @include sm(padding-top, 30px);
 }
 
@@ -30,7 +30,7 @@
 
   &__link {
     display: block;
-    padding: 35px 0;
+    padding: em(35) 0;
     text-decoration: none;
     @include font(pt(16), 800);
     @include md-block() {
@@ -40,15 +40,13 @@
     &:hover, :active {
       color: $link-dark;
     }
-  }
-
-
-}
+  } // end .nav-menu__link
+} // end .nav-menu
 
 .header-content {
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
+  margin-top: em(40);
   @include sm-block(){
     flex-direction: row;
     flex-wrap: wrap;
@@ -56,43 +54,55 @@
   };
   @include col();
   @include size(12);
-}
+} // end .header-content
 
 .author {
-
   &__name {
-    max-width: 150px;
+    max-width: rem(150);
     font-family: 'Gilroy-ExtraBold';
-    @include font(pt(26),800);
+    @include font(pt(26), 800);
   }
   &__description {
-    padding-top: 25px;
-    line-height: 2;
-    @include font(pt(14),300);
+    padding-top: em(25);
+    line-height: 1.5;
+    @include font(pt(16), 300);
     @include sm-block(){
       margin-left: calc(100% / 5);
     };
-  }
-  &__age {
-
-  }
-}
+  } // end .author__description
+} // end .author
 
 .author-photo {
+  position: relative;
   display: flex;
   width: 100%;
-  height: 480px;
-  margin-top: 50px;
+  height: rem(450);
+  margin-top: em(50);
   overflow: hidden;
-  background-image: url('https://images.unsplash.com/photo-1547093349-65cdba98369a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  transition: $ease-10s;
+  //background-image: url('https://images.unsplash.com/photo-1547093349-65cdba98369a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+  //background-repeat: no-repeat;
+  //background-position: center;
+  //background-size: cover;
   @include sm(height, calc(480px / 1vh));
-}
+  &__img {
+    display: block;
+    position: absolute;
+    left: -50%;
+    transform: translateX(5%);
+    width: auto;
+    min-width: em(640);
+    @include sm-block() {
+      top: -25%;
+      left: 0;
+      transform: translateX(0);
+    }
+    &:hover {
+      transform: scale(1.2);
+    }
+  }  // .author-photo__img
+} // .author-photo
 
-// fixed nav
+// fixed nav menu
 
 .nav {
   position: relative;
@@ -102,10 +112,12 @@
       display: block;
     }
     position: fixed;
-    left: 50%; transform: translate(-50%);
-    bottom: -10px;
-    width: 50px;
-    height: 50px;
+    z-index: 90;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: em(-10);
+    width: em(50);
+    height: em(50);
     background-color: transparent;
     overflow: hidden;
     cursor: pointer;
@@ -121,43 +133,47 @@
     &__arrow {
       position: absolute;
       top: 50%;
-      left: calc(25%);
+      left: 25%;
       fill: $dropMenu-icon;
       &:hover {
         fill: $dropMenu-icon-action;
       }
-    }
-  }
+    } // end .nav .dropMenu-toggle__arrow
+  } // end .nav .dropMenu-toggle
 
   &.dropMenu-show {
     @extend .container;
     padding: 0 !important;
     position: fixed;
+    z-index: 91;
     top: 0;
-    transform: translateX(15px);
+    transform: translateX(em(15));
     background-color: $dropMenu-bg;
     & .nav-menu {
-      margin-bottom: 30px;
+      margin-bottom: em(30);
       animation: dropDown-animation ease 1s;
       @keyframes dropDown-animation {
-        from { top: -110px; }
+        from { top: em(-110); }
         to { top: 0; }
       }
       &::after {
         content: '';
         width: 100%;
       }
-    }
+      &__link {
+        padding-top: em(10);
+      }
+    } // end .nav.dropMenu-show .nav-menu
 
     & .dropMenu-toggle {
-      top: 94.2px !important;
+      top: em(94.2) !important;
         @include md-block() {
-          top: 97.4px !important;
+          top: em(97.4) !important;
         }
       &__arrow {
         transform: rotate(180deg);
         fill: $dropMenu-icon-action;
       }
-    }
-  }
-}
+    } // end .nav.dropMenu-show .dropMenu-toggle
+  } // end .nav.dropMenu-show
+} // end .nav

@@ -1,5 +1,4 @@
 .skills {
-
   &__wrap {
     display: flex;
     flex-direction: column;
@@ -9,9 +8,8 @@
       @include col();
       @include size(12);
     }
-    padding-top: 35px;
+    padding-top: em(35);
   }
-
 
   &__item {
     position: relative;
@@ -20,13 +18,12 @@
     @include size-sm(3);
     color: $text-grey;
   }
-  
   &__description {
-    z-index: 999;
     position: absolute;
+    z-index: 999;
     width: 100%;
     min-height: 65%;
-    padding: 30px 0 40px;
+    padding: em(30) 0 em(40);
     background-color: $main-1st;
     box-shadow: $shdw;
     opacity: 0;
@@ -48,7 +45,7 @@
     & h5 {
       font-weight: 800;
     }
-  }
+  } // end .skills__description
 
   // circle bar
   &__round {
@@ -78,8 +75,8 @@
   }
   &__name {
     display: block;
-    padding-top: 20px;
-    padding-bottom: 60px;
+    padding-top: em(20);
+    padding-bottom: em(60);
     text-align: center;
     @include font(pt(32), 800);
     @include sm-block(){
@@ -92,4 +89,4 @@
       @include font(pt(32), 800);
     }
   }
-}
+} // end skills

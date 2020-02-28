@@ -2,16 +2,14 @@
   &__more {
     margin-bottom: em(35);
   }
-
   &__social {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 350px;
+    max-width: rem(350);
     margin-bottom: em(45);
 
   }
-
   &__msg-link {
     margin-bottom: em(35);
   }
@@ -42,6 +40,6 @@
           fill: $icon-hover-gh;
         }
       }
-    }
-  }
-}
+    } // end contacts .social__icon
+  } // end contacts .social
+} // end contacts

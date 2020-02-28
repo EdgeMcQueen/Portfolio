@@ -2,16 +2,12 @@
 @include reset();
 
 :root {
-  font-size: 16px;
+  font-size: 100%;
 }
 
 body,
 html{
   font-family: "Gilroy-Light";
-}
-
-body * {
-  transition: $ease-5s;
 }
 
 a {
