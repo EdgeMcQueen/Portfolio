@@ -62,5 +62,6 @@
   line-height: 1.5;
   &:hover, :active {
     background-color: $icon-hover-gh;
+    box-shadow: $shdw;
   }
 }

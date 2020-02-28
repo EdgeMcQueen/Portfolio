@@ -81,6 +81,7 @@ gulp.task('code', function() {
 gulp.task('scripts', async function() {
   return gulp.src(['node_modules/jquery/dist/jquery.js'])
     .pipe(addsrc.append('node_modules/magnific-popup/dist/jquery.magnific-popup.js'))
+    .pipe(addsrc.append('node_modules/jquery-circle-progress/dist/circle-progress.min.js'))
     .pipe(concat('libs.js'))
     .pipe(gulp.dest('app/js'))
     .pipe(browserSync.reload({stream: true}));

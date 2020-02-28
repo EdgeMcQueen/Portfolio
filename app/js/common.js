@@ -45,12 +45,12 @@ $(function(){
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-	if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+	if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
 		document.querySelector(".dropMenu-toggle").style.top = "0";
-		document.querySelector(".nav-menu").style.top = "0";
 	} else {
 		document.querySelector(".dropMenu-toggle").style.top = "-50px";
 		document.querySelector(".nav").classList.remove("dropMenu-show");
+		document.querySelector(".nav-menu").style =  ``;
 	}
 }
 
@@ -78,4 +78,17 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 	$('html, body').animate({
 		scrollTop: $($.attr(this, 'href')).offset().top
 	}, 1000);
+});
+
+// skills circle progress
+function circle(el){
+	$(el).circleProgress({fill: {color: '#828282'}})
+		.on('circle-animation-progress', function(event, progress, stepValue){
+			$(this).find('.skills__percent').text(String(stepValue.toFixed(2)).substr(2)+'%');
+		});
+};
+circle('.skills__round');
+
+$('.skills__round').circleProgress({
+	startAngle: Math.PI / -2,
 });

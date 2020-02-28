@@ -5,6 +5,7 @@
 }
 
 .nav {
+  position: relative;
   @include col();
   @include size(12);
 }
@@ -136,6 +137,7 @@
     transform: translateX(15px);
     background-color: $dropMenu-bg;
     & .nav-menu {
+      margin-bottom: 30px;
       animation: dropDown-animation ease 1s;
       @keyframes dropDown-animation {
         from { top: -110px; }
@@ -143,13 +145,9 @@
       }
       &::after {
         content: '';
-        display: none;
-      }
-      &__link {
-
+        width: 100%;
       }
     }
-
 
     & .dropMenu-toggle {
       top: 94.2px !important;
@@ -162,5 +160,4 @@
       }
     }
   }
-
 }

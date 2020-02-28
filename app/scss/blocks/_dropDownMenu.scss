@@ -55,6 +55,7 @@
 
 .burger-menu.burger-opened {
   position: fixed;
+  z-index: 9;
   width: 100%;
   height: 150%;
   background-color: $main-1st;

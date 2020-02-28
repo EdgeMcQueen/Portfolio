@@ -19,10 +19,11 @@
     "gulp-uglifyjs": "^0.6.2"
   },
   "dependencies": {
-    "smart-grid": "^2.1.2",
-    "normalize.css": "^8.0.1",
     "jquery": "^3.4.1",
-    "magnific-popup": "^1.1.0"
+    "jquery-circle-progress": "^1.2.2",
+    "magnific-popup": "^1.1.0",
+    "normalize.css": "^8.0.1",
+    "smart-grid": "^2.1.2"
   },
   "author": "ko2doo@github.com",
   "license": "ISC"

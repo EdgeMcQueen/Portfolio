@@ -1,0 +1,95 @@
+.skills {
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include sm-block(){
+      flex-direction: row;
+      @include col();
+      @include size(12);
+    }
+    padding-top: 35px;
+  }
+
+
+  &__item {
+    position: relative;
+    width: 85%;
+    @include col();
+    @include size-sm(3);
+    color: $text-grey;
+  }
+  
+  &__description {
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+    min-height: 65%;
+    padding: 30px 0 40px;
+    background-color: $main-1st;
+    box-shadow: $shdw;
+    opacity: 0;
+    line-height: 2;
+    @include font(pt(16), 800);
+    color: $text-dark;
+    @include sm-block(){
+      @include font(pt(8), 800);
+    }
+    @include md-block(){
+      @include font(pt(10), 800);
+    }
+    @include lg-block(){
+      @include font(pt(16), 800);
+    }
+    &:hover {
+      opacity: 1;
+    }
+    & h5 {
+      font-weight: 800;
+    }
+  }
+
+  // circle bar
+  &__round {
+    position: relative;
+    & canvas {
+      width: 100% !important;
+      height: 100% !important;
+      outline: none !important;
+    }
+  }
+  &__percent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include font(pt(42), 800);
+    color: $text-dark;
+    @include sm-block(){
+      @include font(pt(24), 800);
+    }
+    @include md-block(){
+      @include font(pt(34), 800);
+    }
+    @include lg-block(){
+      @include font(pt(42), 800);
+    }
+  }
+  &__name {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 60px;
+    text-align: center;
+    @include font(pt(32), 800);
+    @include sm-block(){
+      @include font(pt(16), 800);
+    }
+    @include md-block(){
+      @include font(pt(24), 800);
+    }
+    @include lg-block(){
+      @include font(pt(32), 800);
+    }
+  }
+}

@@ -211,6 +211,8 @@ a {
 .main-link-btn:hover,
 .main-link-btn :active {
   background-color: #424242;
+  -webkit-box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.5);
 }
 
 .burger-menu {
@@ -274,6 +276,7 @@ a {
 
 .burger-menu.burger-opened {
   position: fixed;
+  z-index: 9;
   width: 100%;
   height: 150%;
   background-color: #ffffff;
@@ -401,6 +404,7 @@ a {
 }
 
 .nav {
+  position: relative;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
@@ -559,6 +563,7 @@ a {
 }
 
 .nav.dropMenu-show .nav-menu {
+  margin-bottom: 30px;
   -webkit-animation: dropDown-animation ease 1s;
   animation: dropDown-animation ease 1s;
 }
@@ -585,7 +590,7 @@ a {
 
 .nav.dropMenu-show .nav-menu::after {
   content: '';
-  display: none;
+  width: 100%;
 }
 
 .nav.dropMenu-show .dropMenu-toggle {
@@ -601,6 +606,89 @@ a {
 
 .aboutMe__text {
   margin: 0 auto 55px;
+}
+
+.skills__wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 35px;
+}
+
+.skills__item {
+  position: relative;
+  width: 85%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 0.9375rem;
+  margin-right: 0.9375rem;
+  color: #828282;
+}
+
+.skills__description {
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+  min-height: 65%;
+  padding: 30px 0 40px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  line-height: 2;
+  font-size: 1.33333rem;
+  font-weight: 800;
+  color: #070707;
+}
+
+.skills__description:hover {
+  opacity: 1;
+}
+
+.skills__description h5 {
+  font-weight: 800;
+}
+
+.skills__round {
+  position: relative;
+}
+
+.skills__round canvas {
+  width: 100% !important;
+  height: 100% !important;
+  outline: none !important;
+}
+
+.skills__percent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #070707;
+}
+
+.skills__name {
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  text-align: center;
+  font-size: 2.66667rem;
+  font-weight: 800;
 }
 
 .contacts__more {
@@ -739,6 +827,41 @@ a {
   .aboutMe__text {
     max-width: 31.25em;
   }
+
+  .skills__wrap {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    margin-left: 0.9375rem;
+    margin-right: 0.9375rem;
+    width: -webkit-calc(100% - 1.875rem);
+    width: calc(100% - 1.875rem);
+  }
+
+  .skills__item {
+    width: -webkit-calc(25% - 1.875rem);
+    width: calc(25% - 1.875rem);
+  }
+
+  .skills__description {
+    font-size: 0.66667rem;
+    font-weight: 800;
+  }
+
+  .skills__percent {
+    font-size: 2.0rem;
+    font-weight: 800;
+  }
+
+  .skills__name {
+    font-size: 1.33333rem;
+    font-weight: 800;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -760,12 +883,42 @@ a {
   .nav.dropMenu-show .dropMenu-toggle {
     top: 97.4px !important;
   }
+
+  .skills__description {
+    font-size: 0.83333rem;
+    font-weight: 800;
+  }
+
+  .skills__percent {
+    font-size: 2.83333rem;
+    font-weight: 800;
+  }
+
+  .skills__name {
+    font-size: 2.0rem;
+    font-weight: 800;
+  }
 }
 
 @media screen and (min-width: 992px) {
   .container,
   .nav.dropMenu-show {
     max-width: 58.125rem;
+  }
+
+  .skills__description {
+    font-size: 1.33333rem;
+    font-weight: 800;
+  }
+
+  .skills__percent {
+    font-size: 3.5rem;
+    font-weight: 800;
+  }
+
+  .skills__name {
+    font-size: 2.66667rem;
+    font-weight: 800;
   }
 }
 
