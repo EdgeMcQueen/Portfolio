@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Gilroy-Light";
+  font-weight: 300;
+  src: url('../fonts/Gilroy-Light/Gilroy-Light.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Gilroy-Light/Gilroy-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Gilroy-Light/Gilroy-Light.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Gilroy-Light/Gilroy-Light.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/Gilroy-Light/Gilroy-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Gilroy-Light/Gilroy-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: "Gilroy-ExtraBold";
+  font-weight: 300;
+  src: url('../fonts/Gilroy-ExtraBold/Gilroy-ExtraBold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Gilroy-ExtraBold/Gilroy-ExtraBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Gilroy-ExtraBold/Gilroy-ExtraBold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Gilroy-ExtraBold/Gilroy-ExtraBold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/Gilroy-ExtraBold/Gilroy-ExtraBold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Gilroy-ExtraBold/Gilroy-ExtraBold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+
+@mixin font($size, $weight) {
+	font:{
+		size: $size;
+		weight: $weight;
+	}
+}

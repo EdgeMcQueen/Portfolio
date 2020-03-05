@@ -1,0 +1,16 @@
+// Сброс и переназначение:
+@include reset();
+
+:root {
+  font-size: 100%;
+}
+
+body,
+html{
+  font-family: "Gilroy-Light";
+}
+
+a {
+  text-decoration: none;
+  color: $link-light;
+}

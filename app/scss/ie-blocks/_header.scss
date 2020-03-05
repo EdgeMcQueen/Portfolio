@@ -1,24 +1,23 @@
-.main-header {
-  @include row-flex();
+.ie-all .main-header {
+  display: block;
   padding: em(65) 0 em(85);
   @include sm(padding-top, 30px);
 }
 
-.nav {
+.ie-all .nav {
+  display: block;
   position: relative;
-  @include col();
-  @include size(12);
+  width: 100%;
 }
 
-.nav-menu {
+.ie-all .nav-menu {
   position: relative;
   list-style: none;
   display: none;
   @include col();
   @include sm-block() {
-    display: flex;
+    display: inline-block;
   }
-  justify-content: space-between;
   margin: 0;
   &::after {
     content: '';
@@ -30,6 +29,31 @@
     border-bottom: 1px solid $bdr-grey;
   }
 
+  &__item {
+    display: inline-block;
+    @include sm-block(){
+      margin-left: em(7);
+      margin-right: em(7);
+    }
+    @include md-block(){
+      margin-left: em(20);
+      margin-right: em(20);
+    }
+    @include lg-block(){
+      margin-left: em(50);
+      margin-right: em(50);
+    }
+    @include xl-block(){
+      margin-left: em(75);
+      margin-right: em(75);
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
   &__link {
     display: block;
     padding: em(35) 0;
@@ -45,36 +69,42 @@
   } // end .nav-menu__link
 } // end .nav-menu
 
-.header-content {
-  display: flex;
-  flex-direction: column;
+.ie-all .header-content {
+  display: block;
   margin-top: em(40);
   @include sm-block(){
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-end;
+    display: inline-block;
   };
   @include col();
   @include size(12);
 } // end .header-content
 
-.author {
+.ie-all .author {
+
   &__name {
-    max-width: rem(150);
+    display: inline-block;
+    min-width: em(90);
     font-family: 'Gilroy-ExtraBold';
     @include font(pt(26), 800);
+
   }
   &__description {
-    padding-top: em(25);
-    line-height: 1.5;
+    padding-top: 0;
+    line-height: 2;
     @include font(pt(16), 300);
-    @include sm-block(){
-      margin-left: calc(100% / 5);
-    };
+    @include sm-block() {
+      display: inline-block;
+      float: right;
+      margin-left: 0;
+    }
+    @include md-block() {
+      float: none;
+      margin-left: 25%;
+    }
   } // end .author__description
 } // end .author
 
-.author-photo {
+.ie-all .author-photo {
   position: relative;
   display: flex;
   justify-content: center;
@@ -94,10 +124,10 @@
 
 // fixed nav menu
 
-.nav {
+.ie-all .nav {
   position: relative;
   & .dropMenu-toggle {
-    display: none !important;
+    display: block;
     position: fixed;
     z-index: 90;
     left: 50%;
@@ -110,9 +140,6 @@
     cursor: pointer;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
-    @include sm-block() {
-      display: block !important;
-    }
     &__icon {
       position: absolute;
       left: 0;
@@ -149,6 +176,31 @@
       &::after {
         content: '';
         width: 100%;
+      }
+      &__item {
+        @include sm-block(){
+          margin-left: em(5);
+          margin-right: em(5);
+        }
+        @include md-block(){
+          margin-left: em(20);
+          margin-right: em(20);
+        }
+        @include lg-block(){
+          margin-left: em(49);
+          margin-right: em(49);
+        }
+        @include xl-block(){
+          margin-left: em(73);
+          margin-right: em(73);
+        }
+        &:first-child {
+          margin-left: 0;
+        }
+        &:last-child {
+          margin-right: 0;
+          float: right;
+        }
       }
       &__link {
         padding-top: em(10);

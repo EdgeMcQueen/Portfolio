@@ -7,7 +7,7 @@ $break_md: 768px;
 $break_lg: 992px;
 $break_xl: 1200px;
 
-$offset: 1.875rem;
+$offset: 1.875em;
 $offset_xs: $offset;
 $offset_sm: $offset;
 $offset_md: $offset;
@@ -450,15 +450,15 @@ $fields: 15px;
     height: 100vh;
     position: fixed;
     width: 100%;
-    
+
     > div{
         height: inherit;
         @include container();
-        
+
         > div{
             height: inherit;
             @include row-flex();
-            
+
             > div{
                 @include col();
                 @include size(1);
