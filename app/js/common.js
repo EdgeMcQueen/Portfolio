@@ -1,19 +1,28 @@
-$(function(){
-//Скрипты:
+AOS.init();
 
-	// Включаем Aos.js
-	AOS.init();
+// You can also pass an optional settings object
+// below listed default settings
+AOS.init({
+	// Global settings:
+	disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+	startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+	initClassName: 'aos-init', // class applied after initialization
+	animatedClassName: 'aos-animate', // class applied on animation
+	useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+	disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+	debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+	throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
 
-	AOS.init({
-	  // Настройки, которые могут быть переопределены для каждого элемента с помощью атрибутов data-aos- *:
-	  delay: 0, // значения от 0 до 3000 с шагом 50 мс
-	  duration: 400, // значения от 0 до 3000 с шагом 50 мс
-	  easing: 'ease', // ослабление по умолчанию для анимации AOS
-	  once: true, // должна ли анимация происходить только один раз - при прокрутке вниз
-	  mirror: true, // должны ли элементы анимироваться при прокрутке мимо них
-	  anchorPlacement: 'top-bottom', // определяет, какая позиция элемента относительно окна должна вызывать анимацию
 
-	});
+	// Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+	offset: 120, // offset (in px) from the original trigger point
+	delay: 0, // values from 0 to 3000, with step 50ms
+	duration: 400, // values from 0 to 3000, with step 50ms
+	easing: 'ease', // default easing for AOS animations
+	once: false, // whether animation should happen only once - while scrolling down
+	mirror: false, // whether elements should animate out while scrolling past them
+	anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
 });
 
 // burger menu
@@ -99,7 +108,7 @@ function scrollFunction() {
 // menu hide after click to link
 
 $(document).ready(function() {
-	$('.nav-menu__link').click(function() {
+	$('.dropdown-nav-menu__link').click(function() {
 		if ( $('.nav').hasClass('dropMenu-show')) {
 			$('.nav').removeClass('dropMenu-show');
 		}
@@ -123,6 +132,7 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 });
 
 // skills circle progress
+
 function circle(el){
 	$(el).circleProgress({fill: {color: '#828282'}})
 		.on('circle-animation-progress', function(event, progress, stepValue){
@@ -130,6 +140,7 @@ function circle(el){
 		});
 };
 circle('.skills__round');
+
 
 $('.skills__round').circleProgress({
 	startAngle: Math.PI / -2,

@@ -1,16 +1,18 @@
-var gulp          = require('gulp'),
-    sass          = require('gulp-sass'),
-    smartgrid     = require('smart-grid'),
-    browserSync   = require('browser-sync'),
-    addsrc        = require('gulp-add-src'),
-    gcmq          = require('gulp-group-css-media-queries'),
-    concat        = require('gulp-concat'),
-    uglify        = require('gulp-uglifyjs'),
-    cssnano       = require('gulp-cssnano'),
-    rename        = require('gulp-rename'),
-    del           = require('del'),
-    cache         = require('gulp-cache'),
-    autoprefixer  = require('gulp-autoprefixer');
+var gulp            = require('gulp'),
+    sass            = require('gulp-sass'),
+    smartgrid       = require('smart-grid'),
+    htmlhint        = require("gulp-htmlhint"),
+    htmlhintConfig  = require('htmlhint-htmlacademy'),
+    browserSync     = require('browser-sync'),
+    addsrc          = require('gulp-add-src'),
+    gcmq            = require('gulp-group-css-media-queries'),
+    concat          = require('gulp-concat'),
+    uglify          = require('gulp-uglifyjs'),
+    cssnano         = require('gulp-cssnano'),
+    rename          = require('gulp-rename'),
+    del             = require('del'),
+    cache           = require('gulp-cache'),
+    autoprefixer    = require('gulp-autoprefixer');
 
 
 // Таск для Sass
@@ -27,13 +29,13 @@ gulp.task('sass', async function() {
 });
 
 //таск для синхонизации с браузером
-gulp.task('browser-sync', async function() {
+gulp.task('browser-sync', async function(cb) {
   browserSync({
     server: {
       baseDir: 'app'
     },
     notify: false
-  });
+  }, cb);
 });
 
 // настройки сетки smart-grid
@@ -48,24 +50,24 @@ gulp.task('smart-grid', (cb) => {
         container: 'container'
     },
     container: {
-      maxWidth: '1440 px',
-      fields: '15px' //
+      maxWidth: '1170px',
+      fields: '0.9375rem' // side fields - 15px
     },
     breakPoints: {
       xs: {
-          width: '320px' //
+          width: '20rem' // 320px
       },
       sm: {
-          width: '576px' //
+          width: '36rem' // 576px
       },
       md: {
-          width: '768px' //
+          width: '48rem' // 768px
       },
       lg: {
-          width: '992px' //
+          width: '62rem' // 992px
       },
       xl: {
-          width: '1200px' //
+          width: '75rem' // 1200px
       }
     }
   });
@@ -74,6 +76,8 @@ gulp.task('smart-grid', (cb) => {
 
 gulp.task('code', function() {
   return gulp.src('app/**/*.html')
+  .pipe(htmlhint(htmlhintConfig))
+  .pipe(htmlhint.reporter())
   .pipe(browserSync.reload({ stream: true }))
 });
 
@@ -81,7 +85,8 @@ gulp.task('code', function() {
 gulp.task('scripts', async function() {
   return gulp.src(['node_modules/jquery/dist/jquery.js'])
     .pipe(addsrc.append('node_modules/magnific-popup/dist/jquery.magnific-popup.js'))
-    .pipe(addsrc.append('node_modules/jquery-circle-progress/dist/circle-progress.min.js'))
+    .pipe(addsrc.append('node_modules/aos/dist/aos.js'))
+    .pipe(addsrc.append('node_modules/jquery-circle-progress/dist/circle-progress.js'))
     .pipe(concat('libs.js'))
     .pipe(gulp.dest('app/js'))
     .pipe(browserSync.reload({stream: true}));

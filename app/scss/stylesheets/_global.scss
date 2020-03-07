@@ -60,6 +60,7 @@
   background-color: $link-btn-bg;
   white-space: nowrap;
   line-height: 1.5;
+  transition: $ease-5s;
   &:hover, :active {
     background-color: $icon-hover-gh;
     box-shadow: $shdw;

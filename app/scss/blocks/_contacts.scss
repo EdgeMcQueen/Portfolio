@@ -18,6 +18,7 @@
     }
 
     &__icon {
+      transition: $ease-5s;
       &--vk {
         &:hover, :active {
           fill: $icon-hover-vk;

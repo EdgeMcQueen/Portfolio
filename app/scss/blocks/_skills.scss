@@ -28,6 +28,7 @@
     box-shadow: $shdw;
     opacity: 0;
     line-height: 2;
+    transition: $ease-10s;
     @include font(pt(16), 800);
     color: $text-dark;
     @include sm-block(){

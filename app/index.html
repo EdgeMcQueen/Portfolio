@@ -25,14 +25,24 @@
 <body>
   <div class="container">
   <header id="home" class="main-header">
+    <div class="fake-nav-menu"></div>
      <nav class="nav">
        <div class="dropMenu-toggle">
          <div class="dropMenu-toggle__icon">
-             <svg class="dropMenu-toggle__arrow" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
+             <svg class="dropMenu-toggle__arrow animated fadeInDown duration-3s infinite" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
                <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"></path>
              </svg>
          </div>
        </div>
+<!--   dropdown nav menu    -->
+       <ul class="dropdown-nav-menu">
+         <li class="dropdown-nav-menu__item"><a href="#home" class="dropdown-nav-menu__link">Главная</a></li>
+         <li class="dropdown-nav-menu__item"><a href="#aboutMe" class="dropdown-nav-menu__link">О себе</a></li>
+         <li class="dropdown-nav-menu__item"><a href="#skills" class="dropdown-nav-menu__link">Навыки</a></li>
+         <li class="dropdown-nav-menu__item"><a href="#portfolio" class="dropdown-nav-menu__link">Портфолио</a></li>
+         <li class="dropdown-nav-menu__item"><a href="#contacts" class="dropdown-nav-menu__link">Контакты</a></li>
+       </ul>
+<!--   main nav menu    -->
        <ul class="nav-menu">
          <li class="nav-menu__item"><a href="#home" class="nav-menu__link">Главная</a></li>
          <li class="nav-menu__item"><a href="#aboutMe" class="nav-menu__link">О себе</a></li>
@@ -40,7 +50,7 @@
          <li class="nav-menu__item"><a href="#portfolio" class="nav-menu__link">Портфолио</a></li>
          <li class="nav-menu__item"><a href="#contacts" class="nav-menu__link">Контакты</a></li>
        </ul>
-<!--Drop down menu-->
+<!--burger nav menu-->
        <div class="burger-container">
          <div class="burger-icon">
            <div class="burger-icon__bar burger-icon__topBar"></div>
@@ -177,7 +187,7 @@
       <!-- end skills block -->
       <section id="portfolio" class="portfolio section--wrapper section--grey">
         <div class="container">
-          <h2 class="portfolio__headline section--headline">Портфолио</h2>
+          <h2 class="portfolio__headline section--headline" data-vp-repeat="true">Портфолио</h2>
           <!--
           <div class="portfolio__item">
             <a href="" class="portfolio__preview">

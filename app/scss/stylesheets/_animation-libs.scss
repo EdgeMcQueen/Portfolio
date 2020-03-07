@@ -23,6 +23,22 @@ $easeInOut-1s:  all 0.1s ease-in-out;
 $easeInOut-2s:  all 0.2s ease-in-out;
 $easeInOut-3s:  all 0.3s ease-in-out;
 
+.duration-1s {
+  animation-duration: 1s;
+}
+.duration-2s {
+  animation-duration: 2s;
+}
+.duration-3s {
+  animation-duration: 3s;
+}
+.duration-5s {
+  animation-duration: 5s;
+}
+.duration-10s {
+  animation-duration: 10s;
+}
+
 //Mixins
 @mixin transition ($ease, $properties...) {
   transition: $ease;
