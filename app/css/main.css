@@ -638,9 +638,7 @@ a {
   z-index: 90;
   top: 0;
   left: 50%;
-  -webkit-transform: translate(-50%);
-  -ms-transform: translate(-50%);
-  transform: translate(-50%);
+  margin-left: -24px;
   bottom: -0.625em;
   width: 3.125em;
   height: 1.5625em;
@@ -655,6 +653,7 @@ a {
 }
 
 .nav .dropMenu-toggle__icon {
+  display: none;
   position: absolute;
   width: 100%;
   height: 100%;

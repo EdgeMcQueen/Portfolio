@@ -105,9 +105,11 @@ function scrollFunction() {
 			"top": "0",
 			"display": "block"
 		});
+		$('.dropMenu-toggle__icon').css("display", "block");
 	}
 	else {
 		$('.dropMenu-toggle').css("top", "-50px");
+		$('.dropMenu-toggle__icon').css("display", "none");
 		$(".nav").removeClass("dropMenu-show");
 	}
 }

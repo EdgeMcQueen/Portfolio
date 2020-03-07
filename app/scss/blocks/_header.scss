@@ -140,7 +140,7 @@
     z-index: 90;
     top: 0;
     left: 50%;
-    transform: translate(-50%);
+    margin-left: -24px;
     bottom: em(-10);
     width: em(50);
     height: em(25);
@@ -153,6 +153,7 @@
       display: block !important;
     }
     &__icon {
+      display: none;
       position: absolute;
       width: 100%;
       height: 100%;
