@@ -238,6 +238,35 @@ a {
   box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.5);
 }
 
+.go-to-top {
+  display: block;
+  position: fixed;
+  z-index: 999;
+  width: 1.875em;
+  height: 100%;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.go-to-top__arrow {
+  position: absolute;
+  left: 0.1875em;
+  bottom: 1.875em;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  fill: #828282;
+}
+
+.go-to-top__arrow:hover {
+  fill: #070707;
+}
+
+.go-to-top:hover .go-to-top__arrow {
+  fill: #070707;
+}
+
 .burger-menu {
   position: absolute;
   top: 0;
@@ -275,6 +304,9 @@ a {
   font-weight: 800;
   line-height: 4.25rem;
   color: #828282;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .nav-burger__link:hover,
@@ -335,11 +367,18 @@ a {
   top: 50%;
 }
 
+.burger-icon:hover .burger-icon__bar {
+  background-color: #070707;
+}
+
 .burger-icon__bar {
   width: 100%;
   height: 0.25em;
   position: relative;
-  background: #070707;
+  background-color: #828282;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .burger-icon__topBar {

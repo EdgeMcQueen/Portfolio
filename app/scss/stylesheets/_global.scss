@@ -66,3 +66,25 @@
     box-shadow: $shdw;
   }
 }
+
+.go-to-top {
+  display: block;
+  position: fixed;
+  z-index: 999;
+  width: em(30);
+  height: 100%;
+  transition: $ease-5s;
+  &__arrow {
+    position: absolute;
+    left: em(3);
+    bottom: em(30);
+    transition: $ease-5s;
+    fill: $dropMenu-icon;
+    &:hover {
+      fill: $dropMenu-icon-action;
+    }
+  }
+  &:hover .go-to-top__arrow {
+    fill: $dropMenu-icon-action;
+  }
+}

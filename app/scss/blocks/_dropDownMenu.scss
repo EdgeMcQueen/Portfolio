@@ -30,6 +30,7 @@
     @include font(pt(24), 800);
     line-height: rem(68);
     color: $link-grey;
+    transition: $ease-5s;
     &:hover, :active {
       color: $link-dark;
     }
@@ -73,11 +74,15 @@
   display: block;
   margin: -4px auto 0;
   top: 50%;
+  &:hover .burger-icon__bar {
+    background-color: $burger-btn-action;
+  }
   &__bar {
     width: 100%;
     height: em(4);
     position: relative;
-    background: $burger-btn;
+    background-color: $burger-btn;
+    transition: $ease-5s;
   }
   &__topBar {
     transform: translateY(0px) rotate(0deg);
