@@ -46,6 +46,13 @@ $(function(){
 	$burgerIcon.click(function() {
 		$burgerMenu.toggleClass('burger-opened');
 		$burgerIcon.toggleClass('burger-close');
+
+		if ($burgerIcon.hasClass('burger-close') == true) {
+			$('.go-to-top').css("display", "none");
+		}
+		else {
+			$('.go-to-top').css("display", "block");
+		}
 	})
 }());
 

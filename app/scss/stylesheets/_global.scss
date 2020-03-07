@@ -73,11 +73,18 @@
   z-index: 999;
   width: em(30);
   height: 100%;
+  @include md-block() {
+    width: em(60);
+  }
   transition: $ease-5s;
   &__arrow {
     position: absolute;
     left: em(3);
     bottom: em(30);
+    @include md-block() {
+      left: 50%;
+      margin-left: -12px;
+    }
     transition: $ease-5s;
     fill: $dropMenu-icon;
     &:hover {
@@ -86,5 +93,8 @@
   }
   &:hover .go-to-top__arrow {
     fill: $dropMenu-icon-action;
+  }
+  &:hover {
+    background-color: $goToTop-bg-hover;
   }
 }

@@ -9,22 +9,24 @@
   @include size-xs(4);
   @include size-md(4);
   margin: 0;
+  transition: $ease-5s;
 }
 
 .nav-burger {
   position: relative;
-  display: none;
-  width: 100%;
+  width: 0;
   height: 100%;
   list-style: none;
+  transition: $ease-5s;
 
   &__item {
+    width: 0;
     margin-top: em(5);
     transform: scale(1.15) translateY(-30px);
   }
 
   &__link {
-    display: block;
+    display: none;
     position: relative;
     text-decoration: none;
     @include font(pt(24), 800);
@@ -50,50 +52,56 @@
   transform: rotate(0deg);
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+
+  .burger-icon {
+    width: 35px;
+    height: 20px;
+    position: relative;
+    display: block;
+    margin: -4px auto 0;
+    top: 50%;
+    &__bar {
+      width: 100%;
+      height: em(4);
+      position: relative;
+      background-color: $burger-btn;
+      transition: $ease-5s;
+    }
+    &__topBar {
+      transform: translateY(0px) rotate(0deg);
+      transition: $ease-2s;
+    }
+    &__cenBar {
+      transform: translateY(6px) rotate(0deg);
+    }
+    &__botBar {
+      transform: translateY(12px) rotate(0deg);
+    }
+    &:hover .burger-icon__bar {
+      background-color: $burger-btn-action;
+    }
+  } // end burger__icon
   &.burger-close {
-    transform: rotate(90deg);
     & .burger-icon {
+      &__bar {
+        background-color: $burger-btn;
+      }
       &__topBar {
-        transform: translateY(5px) translateX(8px) rotate(45deg);
+        height: 0;
+        transform: translateY(0px) rotate(0deg);
+        transition: $ease-2s;
       }
       &__cenBar {
-        transform: translateY(12px) rotate(0deg);
-        display: none;
+        transform: translateX(-2px) translateY(10px) rotate(45deg);
+        width: 39px;
       }
       &__botBar {
-        transform: translateY(2px) translateX(8px) rotate(-45deg);
+        transform: translateX(-2px) translateY(6px) rotate(-45deg);
+        width: 39px;
       }
     } // end burger-container .burger-icon
   } // end burger-container.burger-close
 } // end burger-container
-
-.burger-icon {
-  width: 35px;
-  height: 20px;
-  position: relative;
-  display: block;
-  margin: -4px auto 0;
-  top: 50%;
-  &:hover .burger-icon__bar {
-    background-color: $burger-btn-action;
-  }
-  &__bar {
-    width: 100%;
-    height: em(4);
-    position: relative;
-    background-color: $burger-btn;
-    transition: $ease-5s;
-  }
-  &__topBar {
-    transform: translateY(0px) rotate(0deg);
-  }
-  &__cenBar {
-    transform: translateY(6px) rotate(0deg);
-  }
-  &__botBar {
-    transform: translateY(12px) rotate(0deg);
-  }
-} // end burger__icon
 
 .burger-menu.burger-opened {
   position: fixed;
@@ -101,17 +109,21 @@
   width: 100%;
   height: 150%;
   background-color: $main-1st;
-
   & .nav-burger {
     position: relative;
     display: block;
     width: 100%;
     height: 100%;
     list-style: none;
+    transition: $ease-5s;
 
     &__item {
+      width: 100%;
       transform: scale(1) translateY(0px);
-      opacity: 1;
+    }
+    &__link {
+      white-space: nowrap;
+      display: block;
     }
   } // end .burger-menu.burger-opened .nav-burger
 } // end .burger-menu.burger-opened
