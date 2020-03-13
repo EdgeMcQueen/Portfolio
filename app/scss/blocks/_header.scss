@@ -99,13 +99,25 @@
 .dropdown-nav-menu {
   @extend .container;
   background-color: $dropMenu-bg;
-  position: relative;
   list-style: none;
+  position: fixed;
+  top: -150px;
   display: none;
+  @include sm-block() {
+    animation-duration: 0s;
+    display: flex;
+  }
   @include col();
   @include size(12);
   justify-content: space-between;
   margin: 0;
+  animation: drop-menu-hide;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  @keyframes  drop-menu-hide {
+    from {top: 0;}
+    to {top: -150px;}
+  }
   &::after {
     content: '';
     position: absolute;
@@ -138,7 +150,7 @@
     display: none !important;
     position: fixed;
     z-index: 90;
-    top: 0;
+    top: -50px;
     left: 50%;
     margin-left: -24px;
     bottom: em(-10);
@@ -152,16 +164,16 @@
     @include sm-block() {
       display: block !important;
     }
+    transition: all ease-in-out 1s;
     &__icon {
       display: none;
       position: absolute;
       width: 100%;
       height: 100%;
+      transition: all ease-in-out 1s;
     }
     &__arrow {
-      position: absolute;
-      left: 25%;
-      animation-duration: 2s;
+      width: 100%;
       fill: $dropMenu-icon;
       &:hover {
         fill: $dropMenu-icon-action;
@@ -173,17 +185,14 @@
     & .dropdown-nav-menu {
       padding: 0 !important;
       z-index: 91;
-      position: fixed;
       top: 0;
-      @include sm-block() {
-        display: flex;
-      }
       margin-bottom: em(30);
-      animation: dropDown-animation;
+      animation: drop-menu-show;
       animation-duration: 1s;
-      @keyframes dropDown-animation {
-        from { top: em(-110); }
-        to { top: 0; }
+      animation-delay: 0s;
+      @keyframes  drop-menu-show {
+        from {top: -150px;}
+        to {top: 0;}
       }
       &::after {
         content: '';
@@ -197,15 +206,16 @@
     & .dropMenu-toggle {
       overflow: visible;
       top: em(85) !important;
+      animation: dropDown-toggle-animation;
+      animation-delay: 0s;
+      animation-duration: 1s;
+      @keyframes dropDown-toggle-animation {
+        from { top: em(-50); }
+        to { bottom: 0; }
+      }
       &__icon {
-        animation: dropDown-animation;
-        animation-duration: 1s;
-        @keyframes dropDown-animation {
-          from { top: em(-110); }
-          to { top: em(50); }
-        }
         padding-top: 20px;
-        transform: rotate(180deg);
+        transform: rotateX(180deg);
       }
       &__arrow {
         fill: $dropMenu-icon;

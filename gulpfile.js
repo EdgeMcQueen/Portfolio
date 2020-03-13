@@ -96,10 +96,11 @@ gulp.task('scripts', async function() {
 gulp.task('css-lib', function() {
   return gulp.src([
       'node_modules/normalize.css/normalize.css',
-      'node_modules/magnific-popup/dist/magnific-popup.css'
+      'node_modules/magnific-popup/dist/magnific-popup.css',
+      'node_modules/aos/dist/aos.css'
     ])
-    .pipe(concat('libs.css'))
-    .pipe(gulp.dest('app/css'))
+    .pipe(concat('lib.scss'))
+    .pipe(gulp.dest('app/scss'))
     .pipe(browserSync.reload({stream: true}));
 });
 
