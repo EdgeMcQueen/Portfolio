@@ -106,7 +106,13 @@ gulp.task('css-lib', function() {
 
 
 gulp.task('clean', async function() {
-  return del.sync('dist');
+  //return del.sync(['./../css', './../fonts', './../img', './../js', './../*.html']);
+    return del.sync([
+        './../css', './../fonts',
+        './../img',
+        './../js',
+        './../*.html'],
+        {force: true})
 });
 
 gulp.task('clear-cache', function (callback) {
@@ -117,26 +123,26 @@ gulp.task('prebuild', async function(){
   var buildCSS = gulp.src(['app/css/**/*.css'])
       .pipe(cssnano()) // минификация
       .pipe(rename({suffix: '.min'}))
-      .pipe(gulp.dest('dist/css'))
+      .pipe(gulp.dest('./../css'));
 
   var buildFonts = gulp.src('app/fonts/**/*')
-      .pipe(gulp.dest('dist/fonts'))
+      .pipe(gulp.dest('./../fonts'));
 
   var buildIMG = gulp.src('app/img/**/*')
-      .pipe(gulp.dest('dist/img'))
+      .pipe(gulp.dest('./../img'));
 
   var buildJSLibs = gulp.src('app/js/libs.js')
       .pipe(uglify())
       .pipe(rename({suffix: '.min'}))
-      .pipe(gulp.dest('dist/js'))
+      .pipe(gulp.dest('./../js'));
 
   var buildJSCommon = gulp.src('app/js/common.js')
       .pipe(uglify())
       .pipe(rename({suffix: '.min'}))
-      .pipe(gulp.dest('dist/js'))
+      .pipe(gulp.dest('./../js'));
 
   var buildHTML = gulp.src('app/**/*.html')
-      .pipe(gulp.dest('dist'))
+      .pipe(gulp.dest('./../'))
 });
 
 // Следим за файлами
