@@ -9,8 +9,6 @@ var sass            = require('gulp-sass'),
     smartgrid       = require('smart-grid'),
     gcmq            = require('gulp-group-css-media-queries'),
     cleanCSS        = require('gulp-clean-css'),
-    cssnano         = require('gulp-cssnano'),
-    csso            = require('gulp-csso'),
     autoprefixer    = require('gulp-autoprefixer');
 // модули скриптов
 var minJs           = require('gulp-terser');
