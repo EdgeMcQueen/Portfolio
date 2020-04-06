@@ -10,7 +10,7 @@
     width: auto !important;
     height: auto !important;
     color: $text-grey;
-    @include sm-block(){
+    @include sm-block() {
       display: inline-block;
     }
   }
@@ -26,13 +26,13 @@
     line-height: 2;
     @include font(pt(16), 800);
     color: $text-dark;
-    @include sm-block(){
-      font-size: pt(12)\9;
+    @include sm-block() {
+      font-size: pt(12) \9;
     }
-    @include md-block(){
+    @include md-block() {
       @include font(pt(10), 800);
     }
-    @include lg-block(){
+    @include lg-block() {
       @include font(pt(16), 800);
     }
     &:hover {
@@ -59,13 +59,13 @@
     transform: translate(-50%, -50%);
     @include font(pt(42), 800);
     color: $text-dark;
-    @include sm-block(){
+    @include sm-block() {
       @include font(pt(24), 800);
     }
-    @include md-block(){
+    @include md-block() {
       @include font(pt(34), 800);
     }
-    @include lg-block(){
+    @include lg-block() {
       @include font(pt(42), 800);
     }
   }
@@ -75,13 +75,13 @@
     padding-bottom: em(60);
     text-align: center;
     @include font(pt(32), 800);
-    @include sm-block(){
+    @include sm-block() {
       @include font(pt(16), 800);
     }
-    @include md-block(){
+    @include md-block() {
       @include font(pt(24), 800);
     }
-    @include lg-block(){
+    @include lg-block() {
       @include font(pt(32), 800);
     }
   }

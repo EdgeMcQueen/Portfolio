@@ -21,7 +21,7 @@
   justify-content: space-between;
   margin: 0;
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -40,7 +40,8 @@
     }
     color: $link-grey;
     transition: $ease-5s;
-    &:hover, :active {
+    &:hover,
+    :active {
       color: $link-dark;
     }
   } // end .nav-menu__link
@@ -50,11 +51,11 @@
   display: flex;
   flex-direction: column;
   margin-top: em(40);
-  @include sm-block(){
+  @include sm-block() {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-end;
-  };
+  }
   @include col();
   @include size(12);
 } // end .header-content
@@ -62,16 +63,16 @@
 .author {
   &__name {
     max-width: rem(150);
-    font-family: 'Gilroy-ExtraBold';
+    font-family: "Gilroy-ExtraBold";
     @include font(pt(26), 800);
   }
   &__description {
     padding-top: em(25);
     line-height: 1.5;
     @include font(pt(16), 300);
-    @include sm-block(){
+    @include sm-block() {
       margin-left: calc(100% / 5);
-    };
+    }
   } // end .author__description
 } // end .author
 
@@ -91,7 +92,7 @@
     &:hover {
       transform: scale(1.2);
     }
-  }  // .author-photo__img
+  } // .author-photo__img
 } // .author-photo
 
 // fixed nav menu
@@ -114,12 +115,16 @@
   animation: drop-menu-hide;
   animation-duration: 1s;
   animation-delay: 0s;
-  @keyframes  drop-menu-hide {
-    from {top: 0;}
-    to {top: -150px;}
+  @keyframes drop-menu-hide {
+    from {
+      top: 0;
+    }
+    to {
+      top: -150px;
+    }
   }
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -138,7 +143,8 @@
     }
     color: $link-grey;
     transition: $ease-5s;
-    &:hover, :active {
+    &:hover,
+    :active {
       color: $link-dark;
     }
   } // end .nav-menu__link
@@ -190,12 +196,16 @@
       animation: drop-menu-show;
       animation-duration: 1s;
       animation-delay: 0s;
-      @keyframes  drop-menu-show {
-        from {top: -150px;}
-        to {top: 0;}
+      @keyframes drop-menu-show {
+        from {
+          top: -150px;
+        }
+        to {
+          top: 0;
+        }
       }
       &::after {
-        content: '';
+        content: "";
         width: 100%;
       }
       &__link {
@@ -210,8 +220,12 @@
       animation-delay: 0s;
       animation-duration: 1s;
       @keyframes dropDown-toggle-animation {
-        from { top: em(-50); }
-        to { bottom: 0; }
+        from {
+          top: em(-50);
+        }
+        to {
+          bottom: 0;
+        }
       }
       &__icon {
         padding-top: 20px;

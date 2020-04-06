@@ -4,13 +4,12 @@
   top: 0;
   left: 0;
   padding: em(80) em(15);
-  font-family: 'Gilroy-ExtraBold';
+  font-family: "Gilroy-ExtraBold";
   @include col();
   @include sm(display, none);
   @include size-xs(4);
   @include size-md(4);
   margin: 0;
-
 }
 
 .nav-burger {
@@ -21,9 +20,13 @@
   animation: burger-menu-hide;
   animation-duration: 0.5s;
   animation-delay: 0s;
-  @keyframes  burger-menu-hide {
-    from {width: 100%;}
-    to {width: 0;}
+  @keyframes burger-menu-hide {
+    from {
+      width: 100%;
+    }
+    to {
+      width: 0;
+    }
   }
 
   &__item {
@@ -32,9 +35,13 @@
     animation: burger-menu-item-hide;
     animation-duration: 0.5s;
     animation-delay: 0s;
-    @keyframes  burger-menu-item-hide {
-      from {width: 100%;}
-      to {width: 0;}
+    @keyframes burger-menu-item-hide {
+      from {
+        width: 100%;
+      }
+      to {
+        width: 0;
+      }
     }
   }
 
@@ -46,7 +53,8 @@
     line-height: rem(68);
     color: $link-grey;
     transition: $ease-5s;
-    &:hover, :active {
+    &:hover,
+    :active {
       color: $link-dark;
     }
   } // end nav-dropDown__link
@@ -120,9 +128,13 @@
   animation: burger-menu-show;
   animation-duration: 0.5s;
   animation-delay: 0s;
-  @keyframes  burger-menu-show {
-    from {width: 0;}
-    to {width: 100%;}
+  @keyframes burger-menu-show {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
   }
   position: fixed;
   z-index: 9;
@@ -136,22 +148,23 @@
     height: 100%;
     list-style: none;
 
-
     &__item {
       width: 100%;
       animation: burger-menu-item-show;
       animation-duration: 0.5s;
       animation-delay: 0s;
-      @keyframes  burger-menu-item-show {
-        from {width: 0;}
-        to {width: 100%;}
+      @keyframes burger-menu-item-show {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
       }
     }
     &__link {
       white-space: nowrap;
       display: block;
-
     }
   } // end .burger-menu.burger-opened .nav-burger
 } // end .burger-menu.burger-opened
-

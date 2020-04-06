@@ -20,7 +20,7 @@
   }
   margin: 0;
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -31,19 +31,19 @@
 
   &__item {
     display: inline-block;
-    @include sm-block(){
+    @include sm-block() {
       margin-left: em(7);
       margin-right: em(7);
     }
-    @include md-block(){
+    @include md-block() {
       margin-left: em(20);
       margin-right: em(20);
     }
-    @include lg-block(){
+    @include lg-block() {
       margin-left: em(50);
       margin-right: em(50);
     }
-    @include xl-block(){
+    @include xl-block() {
       margin-left: em(75);
       margin-right: em(75);
     }
@@ -63,7 +63,8 @@
       @include font(pt(18), 800);
     }
     color: $link-grey;
-    &:hover, :active {
+    &:hover,
+    :active {
       color: $link-dark;
     }
   } // end .nav-menu__link
@@ -72,21 +73,19 @@
 .ie-all .header-content {
   display: block;
   margin-top: em(40);
-  @include sm-block(){
+  @include sm-block() {
     display: inline-block;
-  };
+  }
   @include col();
   @include size(12);
 } // end .header-content
 
 .ie-all .author {
-
   &__name {
     display: inline-block;
     min-width: em(90);
-    font-family: 'Gilroy-ExtraBold';
+    font-family: "Gilroy-ExtraBold";
     @include font(pt(26), 800);
-
   }
   &__description {
     padding-top: 0;
@@ -119,7 +118,7 @@
     &:hover {
       transform: scale(1.2);
     }
-  }  // .author-photo__img
+  } // .author-photo__img
 } // .author-photo
 
 // fixed nav menu
@@ -170,27 +169,31 @@
       margin-bottom: em(30);
       animation: dropDown-animation ease 1s;
       @keyframes dropDown-animation {
-        from { top: em(-110); }
-        to { top: 0; }
+        from {
+          top: em(-110);
+        }
+        to {
+          top: 0;
+        }
       }
       &::after {
-        content: '';
+        content: "";
         width: 100%;
       }
       &__item {
-        @include sm-block(){
+        @include sm-block() {
           margin-left: em(5);
           margin-right: em(5);
         }
-        @include md-block(){
+        @include md-block() {
           margin-left: em(20);
           margin-right: em(20);
         }
-        @include lg-block(){
+        @include lg-block() {
           margin-left: em(49);
           margin-right: em(49);
         }
-        @include xl-block(){
+        @include xl-block() {
           margin-left: em(73);
           margin-right: em(73);
         }
@@ -209,9 +212,9 @@
 
     & .dropMenu-toggle {
       top: em(94.2) !important;
-        @include md-block() {
-          top: em(97.4) !important;
-        }
+      @include md-block() {
+        top: em(97.4) !important;
+      }
       &__arrow {
         transform: rotate(180deg);
         fill: $dropMenu-icon-action;

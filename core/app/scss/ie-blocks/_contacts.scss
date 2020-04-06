@@ -11,7 +11,6 @@
   }
 
   & .social {
-
     &__link {
       display: inline-block;
       margin-left: 15px;
@@ -20,22 +19,26 @@
 
     &__icon {
       &--vk {
-        &:hover, :active {
+        &:hover,
+        :active {
           fill: $icon-hover-vk;
         }
       }
       &--tg {
-        &:hover, :active {
+        &:hover,
+        :active {
           fill: $icon-hover-tg;
         }
       }
       &--ins {
-        &:hover, :active {
+        &:hover,
+        :active {
           fill: $icon-hover-ins-col-1st;
         }
       }
       &--gh {
-        &:hover, :active {
+        &:hover,
+        :active {
           fill: $icon-hover-gh;
         }
       }

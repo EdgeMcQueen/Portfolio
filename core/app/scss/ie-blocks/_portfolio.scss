@@ -1,12 +1,12 @@
 .portfolio {
   @include font(pt(12), 800);
-  @include sm-block(){
+  @include sm-block() {
     @include font(pt(16), 800);
   }
-  @include md-block(){
+  @include md-block() {
     @include font(pt(18), 800);
   }
-  @include lg-block(){
+  @include lg-block() {
     @include font(pt(24), 800);
   }
   color: $text-dark;
@@ -40,7 +40,8 @@
     width: 100%;
   }
   &__link {
-    &:hover, :active {
+    &:hover,
+    :active {
       color: $link-hover-grey;
     }
   }

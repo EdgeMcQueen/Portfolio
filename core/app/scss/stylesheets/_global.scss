@@ -5,34 +5,33 @@
   @include md(max-width, rem(690));
   @include lg(max-width, rem(930));
   @include xl(max-width, rem(1110));
-  @include xs-block(){
+  @include xs-block() {
     padding-left: $fields;
     padding-right: $fields;
-  };
-  @include sm-block(){
+  }
+  @include sm-block() {
     padding-left: $fields * 2;
     padding-right: $fields * 2;
-  };
+  }
 }
 
 .wrapper {
   @include container;
-  @include xs-block(){
+  @include xs-block() {
     padding-left: $fields;
     padding-right: $fields;
-  };
-  @include sm-block(){
+  }
+  @include sm-block() {
     padding-left: $fields * 2;
     padding-right: $fields * 2;
-  };
+  }
 }
 
 .section {
-
   &--headline {
     padding-bottom: 15px;
     margin-bottom: 15px;
-    font-family: 'Gilroy-ExtraBold';
+    font-family: "Gilroy-ExtraBold";
     @include font(pt(34), 800);
     text-align: center;
   }
@@ -61,7 +60,8 @@
   white-space: nowrap;
   line-height: 1.5;
   transition: $ease-5s;
-  &:hover, :active {
+  &:hover,
+  :active {
     background-color: $icon-hover-gh;
     box-shadow: $shdw;
   }
@@ -81,6 +81,7 @@
     position: absolute;
     left: em(3);
     bottom: em(30);
+    transform: rotate(-90deg);
     @include md-block() {
       left: 50%;
       margin-left: -12px;

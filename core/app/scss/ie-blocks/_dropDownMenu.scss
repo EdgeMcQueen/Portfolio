@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   padding: em(80) em(15);
-  font-family: 'Gilroy-ExtraBold';
+  font-family: "Gilroy-ExtraBold";
   margin: 0;
 }
 
@@ -26,7 +26,8 @@
     @include font(pt(24), 800);
     line-height: rem(68);
     color: $link-grey;
-    &:hover, :active {
+    &:hover,
+    :active {
       color: $link-dark;
     }
   } // end nav-dropDown__link
@@ -106,4 +107,3 @@
     }
   } // end .burger-menu.burger-opened .nav-burger
 } // end .burger-menu.burger-opened
-
