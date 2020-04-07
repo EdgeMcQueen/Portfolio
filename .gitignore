@@ -1,4 +1,9 @@
-/source/**
-/.idea/**
-/node_modules/**
+core/sources/**
+core/source/**
 core/node_modules/**
+/.idea/**
+/css/**/*
+/img/**/*
+/fonts/**/*
+/js/**/*
+/index.html

@@ -1,0 +1,48 @@
+// Храним анимации в переменных
+
+//Ease
+$ease-1s: all 0.1s ease;
+$ease-2s: all 0.2s ease;
+$ease-3s: all 0.3s ease;
+$ease-5s: all 0.5s ease;
+$ease-8s: all 0.8s ease;
+$ease-10s: all 1s ease;
+
+// eseIn
+$easeIn-1s: all 0.1s ease-in;
+$easeIn-2s: all 0.2s ease-in;
+$easeIn-3s: all 0.3s ease-in;
+
+// easeOut
+$easeOut-1s: all 0.1s ease-out;
+$easeOut-2s: all 0.2s ease-out;
+$easeOut-3s: all 0.3s ease-out;
+
+// easeInOut
+$easeInOut-1s: all 0.1s ease-in-out;
+$easeInOut-2s: all 0.2s ease-in-out;
+$easeInOut-3s: all 0.3s ease-in-out;
+
+.duration-1s {
+  animation-duration: 1s;
+}
+.duration-2s {
+  animation-duration: 2s;
+}
+.duration-3s {
+  animation-duration: 3s;
+}
+.duration-5s {
+  animation-duration: 5s;
+}
+.duration-10s {
+  animation-duration: 10s;
+}
+
+//Mixins
+@mixin transition($ease, $properties...) {
+  transition: $ease;
+  @if length($properties) > 0 {
+    transition-property: $properties;
+  }
+}

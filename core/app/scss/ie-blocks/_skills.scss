@@ -1,0 +1,88 @@
+.ie-all .skills {
+  &__wrap {
+    display: block;
+    padding-top: em(35);
+  }
+
+  &__item {
+    position: relative;
+    display: block;
+    width: auto !important;
+    height: auto !important;
+    color: $text-grey;
+    @include sm-block() {
+      display: inline-block;
+    }
+  }
+  &__description {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    min-height: 65%;
+    padding: em(30) 0 em(40);
+    background-color: $main-1st;
+    box-shadow: $shdw;
+    opacity: 0;
+    line-height: 2;
+    @include font(pt(16), 800);
+    color: $text-dark;
+    @include sm-block() {
+      font-size: pt(12) \9;
+    }
+    @include md-block() {
+      @include font(pt(10), 800);
+    }
+    @include lg-block() {
+      @include font(pt(16), 800);
+    }
+    &:hover {
+      opacity: 1;
+    }
+    & h5 {
+      font-weight: 800;
+    }
+  } // end .skills__description
+
+  // circle bar
+  &__round {
+    position: relative;
+    & canvas {
+      display: inline;
+      //min-width: em(180) !important;
+      outline: none !important;
+    }
+  }
+  &__percent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include font(pt(42), 800);
+    color: $text-dark;
+    @include sm-block() {
+      @include font(pt(24), 800);
+    }
+    @include md-block() {
+      @include font(pt(34), 800);
+    }
+    @include lg-block() {
+      @include font(pt(42), 800);
+    }
+  }
+  &__name {
+    display: block;
+    padding-top: em(20);
+    padding-bottom: em(60);
+    text-align: center;
+    @include font(pt(32), 800);
+    @include sm-block() {
+      @include font(pt(16), 800);
+    }
+    @include md-block() {
+      @include font(pt(24), 800);
+    }
+    @include lg-block() {
+      @include font(pt(32), 800);
+    }
+  }
+} // end skills
