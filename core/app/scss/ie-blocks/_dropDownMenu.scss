@@ -1,0 +1,109 @@
+.ie-all .burger-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: em(80) em(15);
+  font-family: "Gilroy-ExtraBold";
+  margin: 0;
+}
+
+.ie-all .nav-burger {
+  position: relative;
+  display: none;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+
+  &__item {
+    margin-top: em(5);
+    transform: scale(1.15) translateY(-30px);
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    @include font(pt(24), 800);
+    line-height: rem(68);
+    color: $link-grey;
+    &:hover,
+    :active {
+      color: $link-dark;
+    }
+  } // end nav-dropDown__link
+} // end nav-dropDown
+
+.ie-all .burger-container {
+  @include sm(display, none);
+  position: fixed;
+  z-index: 10;
+  right: $offset_xs_one_side;
+  top: em(20);
+  display: inline-block;
+  width: rem(35);
+  height: rem(20);
+  cursor: pointer;
+  transform: rotate(0deg);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  &.burger-close {
+    transform: rotate(90deg);
+    & .burger-icon {
+      &__topBar {
+        transform: translateY(5px) translateX(8px) rotate(45deg);
+      }
+      &__cenBar {
+        transform: translateY(12px) rotate(0deg);
+        display: none;
+      }
+      &__botBar {
+        transform: translateY(2px) translateX(8px) rotate(-45deg);
+      }
+    } // end burger-container .burger-icon
+  } // end burger-container.burger-close
+} // end burger-container
+
+.ie-all .burger-icon {
+  width: 35px;
+  height: 20px;
+  position: relative;
+  display: block;
+  margin: -4px auto 0;
+  top: 50%;
+  &__bar {
+    width: 100%;
+    height: em(4);
+    position: relative;
+    background: $burger-btn;
+  }
+  &__topBar {
+    transform: translateY(0px) rotate(0deg);
+  }
+  &__cenBar {
+    transform: translateY(6px) rotate(0deg);
+  }
+  &__botBar {
+    transform: translateY(12px) rotate(0deg);
+  }
+} // end burger__icon
+
+.ie-all .burger-menu.burger-opened {
+  position: fixed;
+  z-index: 9;
+  width: 100%;
+  height: 150%;
+  background-color: $main-1st;
+
+  & .nav-burger {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+
+    &__item {
+      transform: scale(1) translateY(0px);
+      opacity: 1;
+    }
+  } // end .burger-menu.burger-opened .nav-burger
+} // end .burger-menu.burger-opened
