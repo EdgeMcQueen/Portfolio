@@ -38,7 +38,7 @@ var addsrc          = require('gulp-add-src'),
 
 // настройки сетки smart-grid
 gulp.task('smart-grid', (cb) => {
-  smartgrid('app/scss/**/*', {
+  smartgrid('app/scss/libs', {
     outputStyle: 'scss',
     filename: '_smart-grid',
     columns: 12, // number of grid columns

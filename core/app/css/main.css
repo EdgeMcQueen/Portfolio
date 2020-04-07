@@ -674,10 +674,9 @@ a {
 }
 
 .burger-menu {
-  width: 0;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   padding: 5em 0.9375em;
   font-family: "Gilroy-ExtraBold";
   -webkit-box-sizing: border-box;
@@ -793,7 +792,7 @@ a {
   top: 1.25em;
   display: inline-block;
   width: 2.1875rem;
-  height: 1.25rem;
+  height: 100%;
   cursor: pointer;
   -webkit-transform: rotate(0deg);
       -ms-transform: rotate(0deg);
@@ -817,7 +816,7 @@ a {
   position: relative;
   display: block;
   margin: -4px auto 0;
-  top: 50%;
+  top: 1%;
 }
 
 .burger-container .burger-icon__bar {

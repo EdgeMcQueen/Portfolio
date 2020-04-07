@@ -10,13 +10,15 @@
   };
 })();
 */
-$((function () {
-    var $burgerIcon = $(".burger-container");
+$(
+  (function () {
+    var $burgerContainer = $(".burger-container");
+    var $burgerIcon = $(".burger-icon");
     var $burgerMenu = $(".burger-menu");
 
     $burgerIcon.click(function () {
       $burgerMenu.toggleClass("burger-opened");
-      $burgerIcon.toggleClass("burger-close");
+      $burgerContainer.toggleClass("burger-close");
 
       if ($burgerIcon.hasClass("burger-close") == true) {
         $(".go-to-top").css("display", "none");
@@ -24,5 +26,18 @@ $((function () {
         $(".go-to-top").css("display", "block");
       }
     });
+
+      $burgerContainer.swipe({
+          swipeLeft:function(event, direction, distance, duration, fingerCount) {
+              $(".burger-menu").addClass("burger-opened");
+              $(".burger-container").addClass("burger-close");
+          }
+      });
+      $burgerMenu.swipe({
+          swipeRight:function(event, direction, distance, duration, fingerCount) {
+              $(".burger-menu").removeClass("burger-opened");
+              $(".burger-container").removeClass("burger-close");
+          }
+      });
   })()
 );

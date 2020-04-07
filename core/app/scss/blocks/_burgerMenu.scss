@@ -1,8 +1,7 @@
 .burger-menu {
-  width: 0;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   padding: em(80) em(15);
   font-family: "Gilroy-ExtraBold";
   @include col();
@@ -68,7 +67,7 @@
   top: em(20);
   display: inline-block;
   width: rem(35);
-  height: rem(20);
+  height: 100%;
   cursor: pointer;
   transform: rotate(0deg);
   user-select: none;
@@ -80,7 +79,7 @@
     position: relative;
     display: block;
     margin: -4px auto 0;
-    top: 50%;
+    top: 1%;
     &__bar {
       width: 100%;
       height: em(4);
