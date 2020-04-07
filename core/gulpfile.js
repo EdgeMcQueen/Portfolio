@@ -120,6 +120,8 @@ gulp.task('scriptClear', async function() {
       'app/js/main.js'
       ])
 });
+
+
 // собираем плагины и библиотеки
 gulp.task('scriptLib', function() {
   return gulp
@@ -299,11 +301,15 @@ gulp.task('prebuild', async function(){
 });
 
 //таск для синхонизации с браузером
+var devip = require('dev-ip');
+devip();
+
 gulp.task('browser-sync', async function(cb) {
-  browserSync({
-    server: {
+  browserSync.init({
+      server: {
       baseDir: 'app'
     },
+    host: "192.168.0.103",
     notify: false
   }, cb);
   gulp.watch('app/**/*.html', gulp.parallel('html'));

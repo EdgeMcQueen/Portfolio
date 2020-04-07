@@ -27,17 +27,17 @@ $(
       }
     });
 
-      $burgerContainer.swipe({
-          swipeLeft:function(event, direction, distance, duration, fingerCount) {
-              $(".burger-menu").addClass("burger-opened");
-              $(".burger-container").addClass("burger-close");
-          }
-      });
-      $burgerMenu.swipe({
-          swipeRight:function(event, direction, distance, duration, fingerCount) {
-              $(".burger-menu").removeClass("burger-opened");
-              $(".burger-container").removeClass("burger-close");
-          }
-      });
+    $burgerContainer.swipe({
+      swipeLeft: function (event, direction, distance, duration, fingerCount) {
+        $(".burger-menu").addClass("burger-opened");
+        $(".burger-container").addClass("burger-close");
+      }
+    });
+    $burgerMenu.swipe({
+      swipeRight: function (event, direction, distance, duration, fingerCount) {
+        $(".burger-menu").removeClass("burger-opened");
+        $(".burger-container").removeClass("burger-close");
+      }
+    });
   })()
 );

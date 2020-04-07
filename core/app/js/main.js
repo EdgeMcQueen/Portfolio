@@ -39,18 +39,18 @@ $(
       }
     });
 
-      $burgerContainer.swipe({
-          swipeLeft:function(event, direction, distance, duration, fingerCount) {
-              $(".burger-menu").addClass("burger-opened");
-              $(".burger-container").addClass("burger-close");
-          }
-      });
-      $burgerMenu.swipe({
-          swipeRight:function(event, direction, distance, duration, fingerCount) {
-              $(".burger-menu").removeClass("burger-opened");
-              $(".burger-container").removeClass("burger-close");
-          }
-      });
+    $burgerContainer.swipe({
+      swipeLeft: function (event, direction, distance, duration, fingerCount) {
+        $(".burger-menu").addClass("burger-opened");
+        $(".burger-container").addClass("burger-close");
+      }
+    });
+    $burgerMenu.swipe({
+      swipeRight: function (event, direction, distance, duration, fingerCount) {
+        $(".burger-menu").removeClass("burger-opened");
+        $(".burger-container").removeClass("burger-close");
+      }
+    });
   })()
 );
 
@@ -145,6 +145,35 @@ function circle(el) {
         .find(".skills__percent")
         .text(String(stepValue.toFixed(2)).substr(2) + "%");
     });
+
+  // function scrollTracking(){
+  //     var wt = $(window).scrollTop();
+  //     var wh = $(window).height();
+  //     var et = $(".skills__wrap").offset().top;
+  //     var eh = $(".skills__wrap").outerHeight();
+  //
+  //     if (et >= wt && et + eh <= wh + wt){
+  //         if (block_show == null || block_show == false) {
+  //             $(".skills__percent").show;
+  //         }
+  //         block_show = true;
+  //     }
+  //     else {
+  //         if (block_show == null || block_show == true) {
+  //             $(".skills__percent").hide;
+  //         }
+  //
+  //         block_show = false;
+  //     }
+  // }
+  //
+  // $(window).scroll(function(){
+  //     scrollTracking();
+  // });
+  //
+  // $(document).ready(function(){
+  //     scrollTracking();
+  // });
 }
 circle(".skills__round");
 
