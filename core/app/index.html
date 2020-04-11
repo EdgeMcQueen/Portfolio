@@ -132,10 +132,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <!-- дополнительные плагины и библиотеки -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
     <!-- my stylesheets -->
     <link rel="stylesheet" type="text/css" href="css/main.min.css" />
-
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
     <!--[if lte IE 9]>
   <script src="js/html5shiv.js"></script>
   <html class="ie-all">
@@ -148,7 +149,7 @@
   <![endif]-->
   </head>
   <body>
-    <a href="#home" class="go-to-top">
+    <a href="#home" class="go-to-top animated slower bounceInUp">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -209,7 +210,7 @@
             <li class="nav-menu__item"><a href="#contacts" class="nav-menu__link">Контакты</a></li>
           </ul>
           <!--burger nav menu-->
-          <div class="burger-container">
+          <div class="burger-container animated slower bounceInRight">
             <div class="burger-icon">
               <div class="burger-icon__bar burger-icon__topBar"></div>
               <div class="burger-icon__bar burger-icon__cenBar"></div>
@@ -218,18 +219,20 @@
           </div>
           <div class="burger-menu">
             <ul class="nav-burger">
-              <li class="nav-burger__item"><a href="#home" class="nav-burger__link">Главная</a></li>
               <li class="nav-burger__item">
-                <a href="#aboutMe" class="nav-burger__link">О себе</a>
+                  <a href="#home" class="nav-burger__link animated faster delay-01s fadeInRight">Главная</a>
               </li>
               <li class="nav-burger__item">
-                <a href="#skills" class="nav-burger__link">Навыки</a>
+                <a href="#aboutMe" class="nav-burger__link animated faster delay-02s fadeInRight">О себе</a>
               </li>
               <li class="nav-burger__item">
-                <a href="#portfolio" class="nav-burger__link">Портфолио</a>
+                <a href="#skills" class="nav-burger__link animated faster delay-03s fadeInRight">Навыки</a>
               </li>
               <li class="nav-burger__item">
-                <a href="#contacts" class="nav-burger__link">Контакты</a>
+                <a href="#portfolio" class="nav-burger__link animated faster delay-04s fadeInRight">Портфолио</a>
+              </li>
+              <li class="nav-burger__item">
+                <a href="#contacts" class="nav-burger__link animated faster delay-05s fadeInRight">Контакты</a>
               </li>
             </ul>
           </div>
@@ -255,7 +258,9 @@
     <main class="main-content">
       <section id="aboutMe" class="aboutMe section--wrapper section--grey">
         <div class="container">
-          <h2 class="aboutMe__headline section--headline">О себе</h2>
+          <h2 class="aboutMe__headline section--headline">
+            О себе
+          </h2>
           <p class="aboutMe__text">
             Здравствуйте, меня зовут Сардор - я начинающий Front-end разработчик. Основная часть
             работы это верстка и дополнение сайтов на HTML/CSS/JS. Так же обладаю навыками работы с
@@ -273,8 +278,12 @@
       <!-- end about me block -->
       <section id="skills" class="skills section--wrapper">
         <div class="container">
-          <h2 class="skills__headline section--headline">Навыки</h2>
-          <p class="skills__foreword">Основные навыки:</p>
+          <h2 class="skills__headline section--headline">
+            Навыки
+          </h2>
+          <p class="skills__foreword">
+            Основные навыки:
+          </p>
           <div class="skills__wrap">
             <div class="skills__item">
               <div class="skills__description">
@@ -377,7 +386,9 @@
       <!-- end skills block -->
       <section id="portfolio" class="portfolio section--wrapper section--grey">
         <div class="container">
-          <h2 class="portfolio__headline section--headline">Портфолио</h2>
+          <h2 class="portfolio__headline section--headline">
+            Портфолио
+          </h2>
           <!--
           <div class="portfolio__item">
             <a href="" class="portfolio__preview">
@@ -441,7 +452,9 @@
     <div class="container">
       <footer id="contacts" class="main-footer">
         <section class="contacts section--wrapper">
-          <h2 class="contacts__headline section--headline">Контакты</h2>
+          <h2 class="contacts__headline section--headline">
+            Контакты
+          </h2>
           <p class="contacts__more">
             Хотите узнать больше? <br />
             Напишите мне!

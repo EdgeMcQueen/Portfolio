@@ -106,6 +106,7 @@ gulp.task('scripts', function() {
   return gulp
         .src([
         'app/js/libs/**/*.js',
+        'app/js/plugins/**/*.js',
         'app/js/main/**/*.js'
         ])
         .pipe(sourcemaps.init())
@@ -260,10 +261,6 @@ gulp.task('prebuild', async function(){
       .pipe(gulp.dest('./../'))
 });
 
-//таск для синхонизации с браузером
-var devip = require('dev-ip');
-devip();
-
 gulp.task('browser-sync', async function(cb) {
   browserSync.init({
       server: {
@@ -275,6 +272,7 @@ gulp.task('browser-sync', async function(cb) {
   gulp.watch('app/**/*.html', gulp.parallel('html'));
   gulp.watch('app/scss/**/*.scss', gulp.series('styles'));
   gulp.watch('app/js/main/*.js', gulp.series('scripts'));
+  gulp.watch('app/js/libs/*.js', gulp.series('scripts'));
   gulp.watch([
           "app/imgStock/**/*.{jpg,jpeg,png,gif,svg}",
   				"!app/imgStock/svg/*.svg",

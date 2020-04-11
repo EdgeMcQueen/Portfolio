@@ -70,13 +70,14 @@
 .go-to-top {
   display: block;
   position: fixed;
-  z-index: 999;
+  z-index: 990;
   width: em(30);
   height: 100vh;
   @include md-block() {
     width: em(60);
   }
   transition: $ease-5s;
+
   &__arrow {
     position: absolute;
     left: em(3);
@@ -88,6 +89,18 @@
     }
     transition: $ease-5s;
     fill: $dropMenu-icon;
+    animation: $blink-5s2s-inft;
+    @keyframes blink5s2sinft {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.2;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
     &:hover {
       fill: $dropMenu-icon-action;
     }

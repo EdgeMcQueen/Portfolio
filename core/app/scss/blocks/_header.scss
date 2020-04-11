@@ -103,26 +103,16 @@
   list-style: none;
   position: fixed;
   top: -150px;
-  display: none;
+  transition: $ease-5s;
+  transition-delay: 0.01s;
+  opacity: 0;
   @include sm-block() {
-    animation-duration: 0s;
     display: flex;
   }
   @include col();
   @include size(12);
   justify-content: space-between;
   margin: 0;
-  animation: drop-menu-hide;
-  animation-duration: 1s;
-  animation-delay: 0s;
-  @keyframes drop-menu-hide {
-    from {
-      top: 0;
-    }
-    to {
-      top: -150px;
-    }
-  }
   &::after {
     content: "";
     position: absolute;
@@ -169,6 +159,7 @@
     -webkit-tap-highlight-color: transparent;
     @include sm-block() {
       display: block !important;
+      top: -50px;
     }
     transition: all ease-in-out 1s;
     &__icon {
@@ -181,6 +172,18 @@
     &__arrow {
       width: 100%;
       fill: $dropMenu-icon;
+      animation: $blink-5s2s-inft;
+      @keyframes blink5s2sinft {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.2;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
       &:hover {
         fill: $dropMenu-icon-action;
       }
@@ -192,18 +195,7 @@
       padding: 0 !important;
       z-index: 91;
       top: 0;
-      margin-bottom: em(30);
-      animation: drop-menu-show;
-      animation-duration: 1s;
-      animation-delay: 0s;
-      @keyframes drop-menu-show {
-        from {
-          top: -150px;
-        }
-        to {
-          top: 0;
-        }
-      }
+      opacity: 1;
       &::after {
         content: "";
         width: 100%;
@@ -224,7 +216,7 @@
           top: em(-50);
         }
         to {
-          bottom: 0;
+          top: 0;
         }
       }
       &__icon {

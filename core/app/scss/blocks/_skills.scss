@@ -51,10 +51,14 @@
   // circle bar
   &__round {
     position: relative;
+    transition: $ease-10s;
+    animation-duration: 10s;
     & canvas {
       outline: none !important;
       width: 100% !important;
       height: 100% !important;
+      transition: $ease-10s;
+      animation-duration: 10s;
     }
   }
   &__percent {

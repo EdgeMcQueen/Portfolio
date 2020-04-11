@@ -105,7 +105,7 @@
      * @default {duration: 1200, easing: 'circleProgressEasing'}
      */
     animation: {
-      duration: 1200,
+      duration: 3000,
       easing: "circleProgressEasing"
     },
 

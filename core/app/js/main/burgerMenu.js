@@ -20,7 +20,7 @@ $(
       $burgerMenu.toggleClass("burger-opened");
       $burgerContainer.toggleClass("burger-close");
 
-      if ($burgerIcon.hasClass("burger-close") == true) {
+      if ($burgerMenu.hasClass("burger-opened") === true) {
         $(".go-to-top").css("display", "none");
       } else {
         $(".go-to-top").css("display", "block");
