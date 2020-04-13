@@ -25,6 +25,8 @@ var htmlhint        = require("gulp-htmlhint"),
     htmlhintConfig  = require('htmlhint-htmlacademy'),
     htmlValidator   = require('gulp-w3c-html-validator'),
     prettier        = require('gulp-prettier'),
+    prettify        = require('gulp-html-prettify'),
+    prettyHtml      = require('gulp-pretty-html'),
     eslint          = require('gulp-eslint');
 // остальные модули
 var addsrc          = require('gulp-add-src'),
@@ -80,7 +82,10 @@ gulp.task('html', function() {
   .pipe(htmlhint.reporter())
   .pipe(plumber())
   .pipe(htmlValidator())
-  .pipe(browserSync.reload({ stream: true }))
+  // .pipe(gulp.dest(function(file){
+  //     return file.base;
+  // }))
+   .pipe(browserSync.reload({ stream: true }))
 });
 
 
@@ -122,16 +127,31 @@ gulp.task('scripts', function() {
 
 // делаем разметку красивой
 gulp.task('prettier', function() {
-  return gulp
+    return gulp
         .src([
-          'app/**/*.html',
-          'app/scss/**/*.scss',
-          'app/css/**/*.css',
-          'app/js/main/**/*.js',
-          'app/js/libs/**/*.js'
+            'app/scss/**/*.scss',
+            'app/css/**/*.css',
+            'app/js/main/**/*.js',
+            'app/js/libs/**/*.js',
+            'app/js/plugins/**/*.js'
         ])
         .pipe(plumber())
         .pipe(prettier({editorconfig: true}))
+        .pipe(gulp.dest(function(file){
+            return file.base;
+        }));
+});
+gulp.task('prettier-html', function() {
+    return gulp
+        .src([
+            'app/**/*.html',
+        ])
+        .pipe(plumber())
+        .pipe(prettyHtml({
+            indent_size: 2,
+            indent_char: " ",
+            wrap_attributes: "force"
+        }))
         .pipe(gulp.dest(function(file){
             return file.base;
         }));
@@ -270,10 +290,11 @@ gulp.task('browser-sync', async function(cb) {
     notify: false
   }, cb);
   gulp.watch('app/**/*.html', gulp.parallel('html'));
-  gulp.watch('app/scss/**/*.scss', gulp.series('styles'));
+  gulp.watch('app/scss/**/*.scss', {delay: 500}, gulp.series('styles'));
   gulp.watch('app/js/main/*.js', gulp.series('scripts'));
   gulp.watch('app/js/libs/*.js', gulp.series('scripts'));
-  gulp.watch([
+  gulp.watch('app/js/plugins/*.js', gulp.series('scripts'));
+    gulp.watch([
           "app/imgStock/**/*.{jpg,jpeg,png,gif,svg}",
   				"!app/imgStock/svg/*.svg",
   				"!app/imgStock/favicons/**/*.{jpg,jpeg,png,gif}"
@@ -284,8 +305,8 @@ gulp.task('browser-sync', async function(cb) {
 
 gulp.task('default',
   gulp.series(
-        gulp.parallel('clear-cache', 'smart-grid', 'prettier'),
-        gulp.series('html', 'styles', 'scripts'),
+        gulp.parallel('clear-cache', 'smart-grid'),
+        gulp.series('html', 'styles', 'scripts', 'prettier-html', 'prettier'),
         gulp.parallel('browser-sync')
   )
 );

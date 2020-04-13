@@ -103,7 +103,7 @@
   list-style: none;
   position: fixed;
   top: -150px;
-  transition: $ease-5s;
+  transition: $ease-10s;
   transition-delay: 0.01s;
   opacity: 0;
   @include sm-block() {
@@ -124,7 +124,7 @@
   }
 
   &__link {
-    display: block;
+    display: none;
     padding: em(35) 0;
     text-decoration: none;
     @include font(pt(16), 800);
@@ -160,6 +160,17 @@
     @include sm-block() {
       display: block !important;
       top: -50px;
+    }
+    animation: dropDown-toggle-animation;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    @keyframes dropDown-toggle-animation {
+      from {
+        top: em(-50);
+      }
+      to {
+        top: 0;
+      }
     }
     transition: all ease-in-out 1s;
     &__icon {
@@ -201,6 +212,7 @@
         width: 100%;
       }
       &__link {
+        display: block;
         padding: em(20) 0;
       }
     } // end .nav.dropMenu-show .nav-menu
