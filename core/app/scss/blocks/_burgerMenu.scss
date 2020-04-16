@@ -17,17 +17,14 @@
 .nav-burger {
   position: relative;
   right: -500px;
-  width: 0;
-  height: 100%;
+  display: block;
   list-style: none;
-
+  transition: $ease-5s;
   &__item {
-    width: 0;
     margin-top: em(5);
   }
 
   &__link {
-    display: none;
     position: relative;
     text-decoration: none;
     @include font(pt(24), 800);
@@ -115,17 +112,70 @@
   & .nav-burger {
     position: relative;
     right: 0;
-    display: block;
     width: 100%;
     height: 100%;
     list-style: none;
 
+
     &__item {
       width: 100%;
+      animation-name: burgerLink;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+      &:first-child {
+        animation-delay: 0;
+      }
+      &:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      &:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+      &:last-child {
+        animation-delay: 0.4s;
+      }
     }
     &__link {
       white-space: nowrap;
       display: block;
-    }
   } // end .burger-menu.burger-opened .nav-burger
 } // end .burger-menu.burger-opened
+}
+.burger-menu.menu-closed {
+  & .nav-burger{
+    &__item {
+      animation-name: burgerLinkHide;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+      &:first-child {
+        animation-delay: 0.4s;
+      }
+      &:nth-child(2) {
+        animation-delay: 0.3s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      &:nth-child(4) {
+        animation-delay: 0.1s;
+      }
+      &:last-child {
+        animation-delay: 0s;
+      }
+    }
+  }
+}
+@keyframes burgerLink {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

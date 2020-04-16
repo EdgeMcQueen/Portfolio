@@ -22,8 +22,10 @@ $(
 
       if ($burgerMenu.hasClass("burger-opened") === true) {
         $(".go-to-top").css("display", "none");
+        $burgerMenu.removeClass("menu-closed");
       } else {
         $(".go-to-top").css("display", "block");
+        $burgerMenu.addClass("menu-closed");
       }
     });
 
