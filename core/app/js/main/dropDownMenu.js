@@ -46,10 +46,10 @@ $(window).scroll(function () {
 
 function scrollFunction() {
   if ($("body").scrollTop() > 100 || $(document.documentElement).scrollTop() > 100) {
-      $(".dropMenu-toggle").css("top", "0");
+    $(".dropMenu-toggle").css("top", "0");
     $(".dropMenu-toggle__icon").css("display", "block");
   } else {
-      $(".dropMenu-toggle").css("top", "-50px");
+    $(".dropMenu-toggle").css("top", "-50px");
 
     $(".dropMenu-toggle__icon").css("display", "none");
     $(".nav").removeClass("dropMenu-show");

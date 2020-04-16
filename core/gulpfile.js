@@ -25,9 +25,7 @@ var htmlhint        = require("gulp-htmlhint"),
     htmlhintConfig  = require('htmlhint-htmlacademy'),
     htmlValidator   = require('gulp-w3c-html-validator'),
     prettier        = require('gulp-prettier'),
-    prettify        = require('gulp-html-prettify'),
-    prettyHtml      = require('gulp-pretty-html'),
-    eslint          = require('gulp-eslint');
+    prettyHtml      = require('gulp-pretty-html');
 // остальные модули
 var addsrc          = require('gulp-add-src'),
     concat          = require('gulp-concat'),
@@ -35,8 +33,7 @@ var addsrc          = require('gulp-add-src'),
     del             = require('del'),
     cache           = require('gulp-cache'),
     sourcemaps      = require('gulp-sourcemaps'),
-    plumber         = require('gulp-plumber'),
-    newer           = require('gulp-newer');
+    plumber         = require('gulp-plumber');
 
 // настройки сетки smart-grid
 gulp.task('smart-grid', (cb) => {
