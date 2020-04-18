@@ -1,0 +1,97 @@
+.skills {
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include sm-block() {
+      flex-direction: row;
+      @include col();
+      @include size(12);
+    }
+    padding-top: em(35);
+  }
+
+  &__item {
+    position: relative;
+    width: 85%;
+    @include col();
+    @include size-sm(3);
+    color: $text-grey;
+  }
+  &__description {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    min-height: 65%;
+    padding: em(30) 0 em(40);
+    background-color: $main-1st;
+    box-shadow: $shdw;
+    opacity: 0;
+    line-height: 2;
+    transition: $ease-10s;
+    @include font(pt(16), 300);
+    color: $text-dark;
+    @include sm-block() {
+      @include font(pt(8), 300);
+    }
+    @include md-block() {
+      @include font(pt(10), 300);
+    }
+    @include lg-block() {
+      @include font(pt(16), 300);
+    }
+    &:hover {
+      opacity: 1;
+    }
+    & li h5 {
+      font-weight: 800;
+    }
+  } // end .skills__description
+
+  // circle bar
+  &__round {
+    position: relative;
+    transition: $ease-10s;
+    animation-duration: 10s;
+    & canvas {
+      outline: none !important;
+      width: 100% !important;
+      height: 100% !important;
+      transition: $ease-10s;
+      animation-duration: 10s;
+    }
+  }
+  &__percent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include font(pt(42), 800);
+    color: $text-dark;
+    @include sm-block() {
+      @include font(pt(24), 800);
+    }
+    @include md-block() {
+      @include font(pt(34), 800);
+    }
+    @include lg-block() {
+      @include font(pt(42), 800);
+    }
+  }
+  &__name {
+    display: block;
+    padding-top: em(20);
+    padding-bottom: em(60);
+    text-align: center;
+    @include font(pt(32), 800);
+    @include sm-block() {
+      @include font(pt(16), 800);
+    }
+    @include md-block() {
+      @include font(pt(24), 800);
+    }
+    @include lg-block() {
+      @include font(pt(32), 800);
+    }
+  }
+} // end skills

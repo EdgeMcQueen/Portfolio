@@ -1,0 +1,47 @@
+.ie-all .contacts {
+  &__more {
+    margin-bottom: em(35);
+  }
+  &__social {
+    display: inline-block;
+    margin: 0 auto;
+    max-width: em(350);
+    margin-top: em(35);
+    margin-bottom: em(45);
+  }
+
+  & .social {
+    &__link {
+      display: inline-block;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+
+    &__icon {
+      &--vk {
+        &:hover,
+        :active {
+          fill: $icon-hover-vk;
+        }
+      }
+      &--tg {
+        &:hover,
+        :active {
+          fill: $icon-hover-tg;
+        }
+      }
+      &--ins {
+        &:hover,
+        :active {
+          fill: $icon-hover-ins-col-1st;
+        }
+      }
+      &--gh {
+        &:hover,
+        :active {
+          fill: $icon-hover-gh;
+        }
+      }
+    } // end contacts .social__icon
+  } // end contacts .social
+} // end contacts
