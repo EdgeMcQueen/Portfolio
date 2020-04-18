@@ -71,12 +71,24 @@
   display: block;
   position: fixed;
   z-index: 990;
+  bottom: 0;
   width: em(30);
-  height: 100vh;
+  height: 100%;
   @include md-block() {
     width: em(60);
   }
-  transition: $ease-5s;
+  transition: $ease-1s;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: fadeInUp;
+  @keyframes fadeInUp {
+    from {
+      bottom: -200px;
+    }
+    to{
+      bottom: 0;
+    }
+  }
 
   &__arrow {
     position: absolute;

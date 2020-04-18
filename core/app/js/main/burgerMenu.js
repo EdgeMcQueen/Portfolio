@@ -21,10 +21,28 @@ $(
       $burgerContainer.toggleClass("burger-close");
 
       if ($burgerMenu.hasClass("burger-opened") === true) {
-        $(".go-to-top").css("display", "none");
+        // $(".go-to-top").css({
+        //   "display": "none",
+        // });
+        $(".go-to-top")
+        .delay(1000)
+        .queue(function (next) {
+          $(this).css({
+            "display": "none",
+          });
+          next();
+        });
+        $(".go-to-top__arrow").css({
+          "bottom": "-200px",
+        });
         $burgerMenu.removeClass("menu-closed");
       } else {
-        $(".go-to-top").css("display", "block");
+        $(".go-to-top").css({
+          "display": "block",
+        });
+        $(".go-to-top__arrow").css({
+          "bottom": "1.875em",
+        });
         $burgerMenu.addClass("menu-closed");
       }
     });
