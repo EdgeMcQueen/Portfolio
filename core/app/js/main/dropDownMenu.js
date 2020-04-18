@@ -1,16 +1,3 @@
-// dropDown menu show/hide
-/*
-(function () {
-  var dropMenuIcon = document.querySelector(".dropMenu-toggle"),
-    dropMenu = document.querySelector(".nav");
-
-  dropMenuIcon.onclick = function () {
-    dropMenu.classList.toggle("dropMenu-show");
-    dropMenuIcon.classList.toggle("dropMenu-hide");
-  };
-})();
-*/
-
 $(
   (function () {
     var $dropMenuIcon = $(".dropMenu-toggle");
@@ -23,22 +10,7 @@ $(
   })()
 );
 
-// slide down menu
-
-/*
-$(window).scroll(function() {scrollFunction()});
-
-function scrollFunction() {
-	if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-		document.querySelector(".dropMenu-toggle").style.top = "0";
-		document.querySelector(".dropMenu-toggle").style.display = "block";
-
-	} else {
-		document.querySelector(".dropMenu-toggle").style.top = "-50px";
-		document.querySelector(".nav").classList.remove("dropMenu-show");
-	}
-}
-*/
+// menu show on scroll
 
 $(window).scroll(function () {
   scrollFunction();
