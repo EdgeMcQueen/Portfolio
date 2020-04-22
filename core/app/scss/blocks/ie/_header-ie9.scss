@@ -1,32 +1,16 @@
-.ie-all .main-header {
+.main-header {
   display: block;
-  padding: em(65) 0 em(85);
   @include sm(padding-top, 30px);
 }
 
-.ie-all .nav {
+.nav {
   display: block;
-  position: relative;
   width: 100%;
 }
 
-.ie-all .nav-menu {
-  position: relative;
-  list-style: none;
-  display: none;
-  @include col();
+.nav-menu {
   @include sm-block() {
     display: inline-block;
-  }
-  margin: 0;
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 95%;
-    border-bottom: 1px solid $bdr-grey;
   }
 
   &__item {
@@ -54,38 +38,19 @@
       margin-right: 0;
     }
   }
-  &__link {
-    display: block;
-    padding: em(35) 0;
-    text-decoration: none;
-    @include font(pt(16), 800);
-    @include md-block() {
-      @include font(pt(18), 800);
-    }
-    color: $link-grey;
-    &:hover,
-    :active {
-      color: $link-dark;
-    }
-  } // end .nav-menu__link
 } // end .nav-menu
 
-.ie-all .header-content {
+.header-content {
   display: block;
-  margin-top: em(40);
   @include sm-block() {
     display: inline-block;
   }
-  @include col();
-  @include size(12);
 } // end .header-content
 
-.ie-all .author {
+.author {
   &__name {
     display: inline-block;
     min-width: em(90);
-    font-family: "Gilroy-ExtraBold";
-    @include font(pt(26), 800);
   }
   &__description {
     padding-top: 0;
@@ -103,84 +68,32 @@
   } // end .author__description
 } // end .author
 
-.ie-all .author-photo {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: rem(450);
-  margin-top: em(50);
-  overflow: hidden;
-  &__img {
-    position: absolute;
-    left: 0;
-    min-width: rem(640);
-    &:hover {
-      transform: scale(1.2);
-    }
-  } // .author-photo__img
-} // .author-photo
-
 // fixed nav menu
 
-.ie-all .nav {
+.nav {
   position: relative;
   & .dropMenu-toggle {
-    display: block;
-    position: fixed;
-    z-index: 90;
-    left: 50%;
-    transform: translate(-50%);
-    bottom: em(-10);
-    width: em(50);
-    height: em(50);
-    background-color: transparent;
-    overflow: hidden;
-    cursor: pointer;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
     &__icon {
       position: absolute;
       left: 0;
       top: -50%;
-      width: 100%;
-      height: 100%;
     }
     &__arrow {
+      margin-left: -14px;
       position: absolute;
       top: 50%;
       left: 25%;
-      fill: $dropMenu-icon;
-      &:hover {
-        fill: $dropMenu-icon-action;
-      }
     } // end .nav .dropMenu-toggle__arrow
   } // end .nav .dropMenu-toggle
 
   &.dropMenu-show {
-    @extend .container;
-    padding: 0 !important;
-    position: fixed;
-    z-index: 91;
-    top: 0;
-    transform: translateX(em(15));
-    background-color: $dropMenu-bg;
-    & .nav-menu {
-      margin-bottom: em(30);
-      animation: dropDown-animation ease 1s;
-      @keyframes dropDown-animation {
-        from {
-          top: em(-110);
-        }
-        to {
-          top: 0;
-        }
-      }
-      &::after {
-        content: "";
-        width: 100%;
+    & .dropdown-nav-menu {
+      display: none;
+      @include sm-block() {
+        display: inline-block;
       }
       &__item {
+        @include col-ib();
         @include sm-block() {
           margin-left: em(5);
           margin-right: em(5);
@@ -205,17 +118,11 @@
           float: right;
         }
       }
-      &__link {
-        padding-top: em(10);
-      }
     } // end .nav.dropMenu-show .nav-menu
 
     & .dropMenu-toggle {
-      top: em(94.2) !important;
-      @include md-block() {
-        top: em(97.4) !important;
-      }
       &__arrow {
+        margin-left: -14px;
         transform: rotate(180deg);
         fill: $dropMenu-icon-action;
       }

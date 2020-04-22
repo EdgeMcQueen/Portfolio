@@ -241,7 +241,8 @@ gulp.task('clean', async function() {
         './../fonts',
         './../img',
         './../js',
-        './../*.html'],
+        './../*.html',
+        './resume.pdf'],
         {force: true})
 });
 
@@ -270,7 +271,7 @@ gulp.task('prebuild', async function(){
       .pipe(gulp.dest('./../js'));
 
   var buildJSMap = gulp.src([
-    'app/js/maps/**/*.map',
+    'app/js/maps/**/*.map'
   ])
       .pipe(gulp.dest('./../js/maps'));
 

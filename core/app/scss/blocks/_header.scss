@@ -106,6 +106,7 @@
   transition: $ease-10s;
   transition-delay: 0.01s;
   opacity: 0;
+  display: none;
   @include sm-block() {
     display: flex;
   }
@@ -244,3 +245,8 @@
     } // end .nav.dropMenu-show .dropMenu-toggle
   } // end .nav.dropMenu-show
 } // end .nav
+
+// styles for ie
+.ie-all {
+  @import "ie/header-ie9";
+}

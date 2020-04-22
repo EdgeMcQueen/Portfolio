@@ -83,7 +83,9 @@
   padding: em(80) em(15);
   font-family: "Gilroy-ExtraBold";
   @include col();
-  @include sm(display, none);
+  @include sm-block() {
+    display: none;
+  }
   @include size-xs(4);
   @include size-md(4);
   margin: 0;
@@ -101,6 +103,9 @@
   }
   &.burger-opened {
     display: block;
+    @include sm-block() {
+      display: none;
+    }
     z-index: 9;
     right: 0;
     width: 100%;

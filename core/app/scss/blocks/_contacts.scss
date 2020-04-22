@@ -45,3 +45,8 @@
     } // end contacts .social__icon
   } // end contacts .social
 } // end contacts
+
+// styles for ie
+.ie-all {
+  @import "ie/contacts-ie9";
+}
