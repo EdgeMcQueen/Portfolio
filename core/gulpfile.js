@@ -172,8 +172,7 @@ gulp.task('images', function() {
           [
       		imageminPngquant({
             speed: 1,
-            floyd: 1,
-            quality: [0.5]
+            quality: [0.3, 0.5]
       		}),
       		imageminZopfli({
       			more: true
