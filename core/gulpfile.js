@@ -275,13 +275,6 @@ gulp.task('prebuild', async function(){
   ])
       .pipe(gulp.dest('./../js/maps'));
 
-  var buildFiles = gulp.src([
-    'app/resume.pdf'
-  ])
-  .pipe(gulp.dest(function(file){
-      return file.base;
-  }));
-
   var buildHTML = gulp.src('app/**/*.html')
       .pipe(gulp.dest('./../'))
 });
