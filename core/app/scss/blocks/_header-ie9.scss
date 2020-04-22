@@ -1,14 +1,14 @@
-.ie-all .main-header {
+.main-header {
   display: block;
   @include sm(padding-top, 30px);
 }
 
-.ie-all .nav {
+.nav {
   display: block;
   width: 100%;
 }
 
-.ie-all .nav-menu {
+.nav-menu {
   @include sm-block() {
     display: inline-block;
   }
@@ -40,14 +40,14 @@
   }
 } // end .nav-menu
 
-.ie-all .header-content {
+.header-content {
   display: block;
   @include sm-block() {
     display: inline-block;
   }
 } // end .header-content
 
-.ie-all .author {
+.author {
   &__name {
     display: inline-block;
     min-width: em(90);
@@ -70,51 +70,30 @@
 
 // fixed nav menu
 
-.ie-all .nav {
+.nav {
   position: relative;
   & .dropMenu-toggle {
     &__icon {
       position: absolute;
       left: 0;
       top: -50%;
-      width: 100%;
-      height: 100%;
     }
     &__arrow {
+      margin-left: -14px;
       position: absolute;
       top: 50%;
       left: 25%;
-      fill: $dropMenu-icon;
-      &:hover {
-        fill: $dropMenu-icon-action;
-      }
     } // end .nav .dropMenu-toggle__arrow
   } // end .nav .dropMenu-toggle
 
   &.dropMenu-show {
-    @extend .container;
-    padding: 0 !important;
-    position: fixed;
-    z-index: 91;
-    top: 0;
-    transform: translateX(em(15));
-    background-color: $dropMenu-bg;
-    & .nav-menu {
-      margin-bottom: em(30);
-      animation: dropDown-animation ease 1s;
-      @keyframes dropDown-animation {
-        from {
-          top: em(-110);
-        }
-        to {
-          top: 0;
-        }
-      }
-      &::after {
-        content: "";
-        width: 100%;
+    & .dropdown-nav-menu {
+      display: none;
+      @include sm-block() {
+        display: inline-block;
       }
       &__item {
+        @include col-ib();
         @include sm-block() {
           margin-left: em(5);
           margin-right: em(5);
@@ -139,17 +118,11 @@
           float: right;
         }
       }
-      &__link {
-        padding-top: em(10);
-      }
     } // end .nav.dropMenu-show .nav-menu
 
     & .dropMenu-toggle {
-      top: em(94.2) !important;
-      @include md-block() {
-        top: em(97.4) !important;
-      }
       &__arrow {
+        margin-left: -14px;
         transform: rotate(180deg);
         fill: $dropMenu-icon-action;
       }
