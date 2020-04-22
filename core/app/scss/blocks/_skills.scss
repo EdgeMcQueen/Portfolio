@@ -96,6 +96,32 @@
   }
 } // end skills
 
+// styles for ie
 .ie-all {
-  @import "skills-ie9";
+  @import "ie/skills-ie9";
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .skills__wrap {
+    @include sm-block() {
+      flex-wrap: wrap;
+    }
+  }
+
+  .skills__item {
+    @include sm-block() {
+      @include size(6);
+    }
+    @include lg-block() {
+      @include size(3);
+    }
+  }
+  .skills__round {
+    display: block;
+    width: 100%;
+    max-width: 180px;
+    height: 100vh !important;
+    max-height: 180px;
+    margin: 0 auto;
+  }
 }

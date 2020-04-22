@@ -246,6 +246,7 @@
   } // end .nav.dropMenu-show
 } // end .nav
 
+// styles for ie
 .ie-all {
-  @import "header-ie9";
+  @import "ie/header-ie9";
 }

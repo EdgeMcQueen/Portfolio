@@ -85,7 +85,7 @@
   @include col();
   @include sm-block() {
     display: none;
-  };
+  }
   @include size-xs(4);
   @include size-md(4);
   margin: 0;
@@ -105,7 +105,7 @@
     display: block;
     @include sm-block() {
       display: none;
-    };
+    }
     z-index: 9;
     right: 0;
     width: 100%;
