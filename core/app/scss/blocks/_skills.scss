@@ -78,6 +78,12 @@
       @include font(pt(42), 800);
     }
   }
+  &__more {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   &__name {
     display: block;
     padding-top: em(20);
