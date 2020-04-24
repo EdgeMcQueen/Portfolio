@@ -1,4 +1,3 @@
-core/sources/**
-core/source/**
-core/node_modules/**
+/core/**
 /.idea/**
+debug.log
