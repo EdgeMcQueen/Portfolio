@@ -34,9 +34,9 @@
     display: block;
     padding: em(35) 0;
     text-decoration: none;
-    @include font(pt(16), 800);
+    @include font(pt(14), 500);
     @include md-block() {
-      @include font(pt(18), 800);
+      @include font(pt(18), 500);
     }
     color: $link-grey;
     transition: $ease-5s;
@@ -62,16 +62,15 @@
 
 .author {
   &__name {
-    max-width: rem(150);
-    font-family: "Gilroy-ExtraBold";
-    @include font(pt(26), 800);
+    max-width: rem(170);
+    @include font(pt(22), 800);
   }
   &__description {
     padding-top: em(25);
     line-height: 1.5;
-    @include font(pt(16), 300);
+    @include font(pt(14), 300);
     @include sm-block() {
-      margin-left: calc(100% / 5);
+      margin-left: calc(100% / 6);
     }
   } // end .author__description
 } // end .author
@@ -249,4 +248,47 @@
 // styles for ie
 .ie-all {
   @import "ie/header-ie9";
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .author__description {
+    margin-left: 0;
+    @include md-block() {
+      margin-left: calc(100% / 5);
+    }
+  }
+  .nav-menu {
+    &__item {
+      margin-left: auto;
+      margin-right: auto;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    &__link {
+      @include font(pt(14), 500);
+      @include md-block() {
+        @include font(pt(18), 500);
+      }
+    }
+  }
+  .dropdown-nav-menu {
+    &__item {
+      margin-left: auto;
+      margin-right: auto;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &.dropMenu-show {
+    & .dropdown-nav-menu {
+    } // end .nav.dropMenu-show .nav-menu
+  }
 }

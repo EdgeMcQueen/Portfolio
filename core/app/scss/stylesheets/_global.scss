@@ -31,8 +31,7 @@
   &--headline {
     padding-bottom: 15px;
     margin-bottom: 15px;
-    font-family: "Gilroy-ExtraBold";
-    @include font(pt(34), 800);
+    @include font(pt(34), 700);
     text-align: center;
   }
   &--wrapper {

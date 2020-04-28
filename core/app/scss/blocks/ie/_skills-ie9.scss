@@ -46,4 +46,9 @@
       @include font(pt(42), 800);
     }
   }
+  &__more {
+    @include lg-block() {
+      @include font(pt(14), 800);
+    }
+  }
 } // end skills
