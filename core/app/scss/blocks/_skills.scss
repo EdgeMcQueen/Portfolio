@@ -80,9 +80,16 @@
   }
   &__more {
     position: absolute;
-    top: 80%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
+    @include font(pt(16), 800);
+    @include sm-block() {
+      @include font(pt(10), 800);
+    }
+    @include lg-block() {
+      @include font(pt(16), 800);
+    }
   }
   &__name {
     display: block;
