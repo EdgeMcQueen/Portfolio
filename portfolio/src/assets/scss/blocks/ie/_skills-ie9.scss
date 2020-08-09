@@ -1,0 +1,54 @@
+.skills {
+  &__wrap {
+    width: 100% !important;
+  }
+  &__description {
+    @include sm-block() {
+      @include font(pt(18), 300);
+    }
+    @include md-block() {
+      @include font(pt(16), 300);
+    }
+    @include lg-block() {
+      @include font(pt(14), 300);
+    }
+    &:hover {
+      opacity: 1;
+    }
+    & li h5 {
+      font-weight: 800;
+    }
+  } // end .skills__description
+  &__item {
+    margin: 0 !important;
+    width: 100%;
+    @include sm-block() {
+      @include col-ib();
+      width: 45% !important;
+    }
+    @include lg-block() {
+      width: 20% !important;
+    }
+  }
+  &__round {
+    display: block;
+    width: 100%;
+    max-width: 180px;
+    height: 100vh !important;
+    max-height: 180px;
+    margin: 0 auto;
+  }
+  &__percent {
+    @include sm-block() {
+      @include font(pt(34), 800);
+    }
+    @include lg-block() {
+      @include font(pt(42), 800);
+    }
+  }
+  &__more {
+    @include lg-block() {
+      @include font(pt(14), 800);
+    }
+  }
+} // end skills

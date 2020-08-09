@@ -170,26 +170,6 @@ template {
   animation-duration: 10s;
 }
 @font-face {
-  font-family: Gilroy-Light;
-  font-weight: 300;
-  src: url(../fonts/Gilroy-Light/Gilroy-Light.eot);
-  src: url(../fonts/Gilroy-Light/Gilroy-Light.eot?#iefix) format("embedded-opentype"),
-    url(../fonts/Gilroy-Light/Gilroy-Light.woff2) format("woff2"),
-    url(../fonts/Gilroy-Light/Gilroy-Light.woff) format("woff"),
-    url(../fonts/Gilroy-Light/Gilroy-Light.ttf) format("truetype"),
-    url(../fonts/Gilroy-Light/Gilroy-Light.svg#svgFontName) format("svg");
-}
-@font-face {
-  font-family: Gilroy-ExtraBold;
-  font-weight: 300;
-  src: url(../fonts/Gilroy-ExtraBold/Gilroy-ExtraBold.eot);
-  src: url(../fonts/Gilroy-ExtraBold/Gilroy-ExtraBold.eot?#iefix) format("embedded-opentype"),
-    url(../fonts/Gilroy-ExtraBold/Gilroy-ExtraBold.woff2) format("woff2"),
-    url(../fonts/Gilroy-ExtraBold/Gilroy-ExtraBold.woff) format("woff"),
-    url(../fonts/Gilroy-ExtraBold/Gilroy-ExtraBold.ttf) format("truetype"),
-    url(../fonts/Gilroy-ExtraBold/Gilroy-ExtraBold.svg#svgFontName) format("svg");
-}
-@font-face {
   font-family: Comfortaa;
   font-style: normal;
   font-weight: 300;
@@ -1358,6 +1338,7 @@ a {
   }
 }
 .skills__description {
+  display: none;
   position: absolute;
   z-index: 999;
   width: 100%;
