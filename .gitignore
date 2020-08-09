@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 core/
+=======
+/core/
+>>>>>>> 2f3ee96cb940fb683b0020947cd03b7b3e1915c5
 core/**/*
 core/sources/**
 core/source/**
