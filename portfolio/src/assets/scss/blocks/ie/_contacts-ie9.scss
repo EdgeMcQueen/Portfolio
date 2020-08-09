@@ -1,0 +1,12 @@
+.contacts {
+  &__social {
+    display: inline-block;
+  }
+
+  & .social {
+    &__link {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  } // end contacts .social
+} // end contacts
