@@ -1,14 +1,300 @@
 <template>
   <div id="app">
+  <a href="#home"
+    class="go-to-top">
+    <svg xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      class="go-to-top__arrow">
+      <path d="M0 3.795l2.995-2.98 11.132 11.185-11.132 11.186-2.995-2.981 8.167-8.205-8.167-8.205zm18.04 8.205l-8.167 8.205 2.995 2.98 11.132-11.185-11.132-11.186-2.995 2.98 8.167 8.206z" />
+    </svg>
+  </a>
 
+  <!-- Header -->
+  <Header />
+
+  <main class="main-content">
+    <section id="aboutMe"
+      class="aboutMe section--wrapper section--grey">
+      <div class="container">
+        <h2 class="aboutMe__headline section--headline">
+          О себе
+        </h2>
+        <p class="aboutMe__text">
+          Здравствуйте, меня зовут Сардор - я начинающий Front-end разработчик. Основная часть
+          работы это верстка и дополнение сайтов на HTML/CSS/JS. Так же обладаю навыками работы с
+          препроцессором SCSS, сборщиком пакетов Gulp, библиотекой JQuery.
+          <br />
+          <br />
+          Имею малый, но стремительно развивающийся, опыт в веб-разработке. С каждым днём стараюсь
+          изучать и применять что-то новое из данной сферы.
+          <br />
+          <br />
+          Так же обладаю такими навыками, как стрессоустойчивость, коммуникабельность, быстро
+          обучаемость и усидчивость.
+        </p>
+        <a href="resume.pdf"
+          class="aboutMe__cv main-link-btn"
+          download>Скачать резюме</a>
+      </div>
+    </section>
+    <!-- end about me block -->
+    <section id="skills"
+      class="skills section--wrapper">
+      <div class="container">
+        <h2 class="skills__headline section--headline">
+          Навыки
+        </h2>
+        <p class="skills__foreword">
+          Основные навыки:
+        </p>
+        <div class="skills__wrap">
+          <div class="skills__item">
+            <div class="skills__description">
+              <ul>
+                <li>
+                  <h5>Базовые знания:</h5>
+                </li>
+                <li>Семантика</li>
+                <li>Валидность</li>
+                <li>Доступность</li>
+                <li>БЭМ</li>
+              </ul>
+            </div>
+            <div class="skills__round"
+              data-value="0.80"
+              data-size="210"
+              data-thickness="7"
+              data-start>
+              <p class="skills__percent"></p>
+              <p class="skills__more">Подробнее</p>
+            </div>
+            <p class="skills__name">HTML</p>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__description">
+              <ul>
+                <li>
+                  <h5>Базовые знания:</h5>
+                </li>
+                <li>Foat</li>
+                <li>Flex/Grid</li>
+                <li>Кросбраузерность</li>
+                <li>Адаптивность</li>
+                <li>SCSS</li>
+              </ul>
+            </div>
+            <div class="skills__round"
+              data-value="0.75"
+              data-size="210"
+              data-thickness="7"
+              data-start>
+              <p class="skills__percent"></p>
+              <p class="skills__more">Подробнее</p>
+            </div>
+            <p class="skills__name">CSS</p>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__description">
+              <ul>
+                <li>
+                  <h5>Базовые знания:</h5>
+                </li>
+                <li>JS</li>
+                <li>JQuery</li>
+                <li>DOM</li>
+              </ul>
+            </div>
+            <div class="skills__round"
+              data-value="0.10"
+              data-size="210"
+              data-thickness="7"
+              data-start>
+              <p class="skills__percent"></p>
+              <p class="skills__more">Подробнее</p>
+            </div>
+            <p class="skills__name">JS</p>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__description">
+              <ul>
+                <li>
+                  <h5>Остальные навыки:</h5>
+                </li>
+                <li>PS/Figma</li>
+                <li>Git</li>
+                <li>Gulp</li>
+                <li>Linux</li>
+              </ul>
+            </div>
+            <div class="skills__round"
+              data-value="0.9"
+              data-size="210"
+              data-thickness="7"
+              data-start>
+              <p class="skills__percent"></p>
+              <p class="skills__more">Подробнее</p>
+            </div>
+            <p class="skills__name">Общее</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end skills block -->
+    <section id="portfolio"
+      class="portfolio section--wrapper section--grey">
+      <div class="container">
+        <h2 class="portfolio__headline section--headline">
+          Портфолио
+        </h2>
+        <!--
+          <div class="portfolio__item">
+            <a href="" class="portfolio__preview">
+              <img src="img/portfolio/" alt="" class="portfolio__img">
+            </a>
+            <a href="" class="portfolio__link"></a>
+          </div>
+          -->
+        <div class="portfolio__item">
+          <a href="https://sardormutalov.github.io/Arrow/app/index.html"
+            class="portfolio__preview"
+            target="_blank">
+            <img src="img/portfolio/arrow.jpg"
+              alt=""
+              class="portfolio__img" />
+          </a>
+          <a href="https://sardormutalov.github.io/Arrow/app/index.html"
+            class="portfolio__link"
+            target="_blank">
+            Arrow corporate website
+          </a>
+        </div>
+
+        <div class="portfolio__item">
+          <a href="https://sardormutalov.github.io/SingleWebPage/index.html"
+            class="portfolio__preview"
+            target="_blank">
+            <img src="img/portfolio/singleWebPage.jpg"
+              alt=""
+              class="portfolio__img" />
+          </a>
+          <a href="https://sardormutalov.github.io/SingleWebPage/index.html"
+            class="portfolio__link"
+            target="_blank">
+            Single landing page
+          </a>
+        </div>
+
+        <div class="portfolio__item">
+          <a href="https://sardormutalov.github.io/Corp-study-mokup/index.html"
+            class="portfolio__preview"
+            target="_blank">
+            <img src="img/portfolio/corpStudyMockup.jpg"
+              alt=""
+              class="portfolio__img" />
+          </a>
+          <a href="https://sardormutalov.github.io/Corp-study-mokup/index.html"
+            class="portfolio__link"
+            target="_blank">
+            Stable corporate website
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- end portfolio -->
+  </main>
+
+  <div class="container">
+    <footer id="contacts"
+      class="main-footer">
+      <section class="contacts section--wrapper">
+        <h2 class="contacts__headline section--headline">
+          Контакты
+        </h2>
+        <p class="contacts__more">
+          Хотите узнать больше?
+          <br />
+          Напишите мне!
+        </p>
+        <a href="mailto:sardor.mutalov@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contacts__msg-link main-link-btn">Написать письмо</a>
+        <div class="contacts__social">
+          <a href="https://vk.com/edgardmcqueen"
+            class="social__link"
+            target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg"
+              class="social__icon social__icon--vk"
+              width="40"
+              height="40"
+              viewBox="0 0 24 24">
+              <path class="st0"
+                d="M13.162 18.994c.609 0 .858-.406.851-.915-.031-1.917.714-2.949 2.059-1.604 1.488 1.488 1.796 2.519 3.603 2.519h3.2c.808 0 1.126-.26 1.126-.668 0-.863-1.421-2.386-2.625-3.504-1.686-1.565-1.765-1.602-.313-3.486 1.801-2.339 4.157-5.336 2.073-5.336h-3.981c-.772 0-.828.435-1.103 1.083-.995 2.347-2.886 5.387-3.604 4.922-.751-.485-.407-2.406-.35-5.261.015-.754.011-1.271-1.141-1.539-.629-.145-1.241-.205-1.809-.205-2.273 0-3.841.953-2.95 1.119 1.571.293 1.42 3.692 1.054 5.16-.638 2.556-3.036-2.024-4.035-4.305-.241-.548-.315-.974-1.175-.974h-3.255c-.492 0-.787.16-.787.516 0 .602 2.96 6.72 5.786 9.77 2.756 2.975 5.48 2.708 7.376 2.708z"></path>
+            </svg>
+          </a>
+          <a href="https://t.me/EdgardMcQueen"
+            class="social__link"
+            target="_blank">
+            <svg width="40px"
+              height="40px"
+              viewBox="0 0 24 24"
+              class="social__icon social__icon--tg"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xml:space="preserve"
+              style="
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                  stroke-linejoin: round;
+                  stroke-miterlimit: 1.41421;
+                ">
+              <path id="telegram-1"
+                d="M18.384,22.779c0.322,0.228 0.737,0.285 1.107,0.145c0.37,-0.141 0.642,-0.457 0.724,-0.84c0.869,-4.084 2.977,-14.421 3.768,-18.136c0.06,-0.28 -0.04,-0.571 -0.26,-0.758c-0.22,-0.187 -0.525,-0.241 -0.797,-0.14c-4.193,1.552 -17.106,6.397 -22.384,8.35c-0.335,0.124 -0.553,0.446 -0.542,0.799c0.012,0.354 0.25,0.661 0.593,0.764c2.367,0.708 5.474,1.693 5.474,1.693c0,0 1.452,4.385 2.209,6.615c0.095,0.28 0.314,0.5 0.603,0.576c0.288,0.075 0.596,-0.004 0.811,-0.207c1.216,-1.148 3.096,-2.923 3.096,-2.923c0,0 3.572,2.619 5.598,4.062Zm-11.01,-8.677l1.679,5.538l0.373,-3.507c0,0 6.487,-5.851 10.185,-9.186c0.108,-0.098 0.123,-0.262 0.033,-0.377c-0.089,-0.115 -0.253,-0.142 -0.376,-0.064c-4.286,2.737 -11.894,7.596 -11.894,7.596Z"></path>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/edgardmcqueen/"
+            class="social__link"
+            target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg"
+              class="social__icon social__icon--ins"
+              width="40"
+              height="40"
+              viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+            </svg>
+          </a>
+          <a href="https://github.com/SardorMutalov"
+            class="social__link"
+            target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg"
+              class="social__icon social__icon--gh"
+              width="40"
+              height="40"
+              viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+            </svg>
+          </a>
+        </div>
+      </section>
+    </footer>
+  </div>
   </div>
 </template>
 
 <script>
+import Header from '@/components/Header/Header.vue';
+
 
 export default {
   name: "App",
   components: {
+    Header,
 
   }
 };
