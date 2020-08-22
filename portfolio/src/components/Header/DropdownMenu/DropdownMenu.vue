@@ -50,8 +50,5 @@ export default {
       dropClass: "dropdown-nav-menu",
     };
   },
-  methods: {
-  },
-  computed: {},
 };
 </script>

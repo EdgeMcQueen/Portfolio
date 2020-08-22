@@ -17,7 +17,7 @@
     <!-- DropdownMenu -->
     <DropdownMenu :navList="nav.navList" @show-toggle="nav.menuHide = !nav.menuHide" :menuHide="nav.menuHide"/>
     <!-- BurgerMenu -->
-    <BurgerMenu :navList="nav.navList" />
+    <BurgerMenu :navList="nav.navList" @show-toggle="nav.menuHide = !nav.menuHide" :menuHide="nav.menuHide"/>
 
     <main class="main-content">
       <section id="aboutMe" class="aboutMe section--wrapper section--grey">
