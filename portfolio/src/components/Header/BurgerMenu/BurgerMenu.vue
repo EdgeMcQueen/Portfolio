@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="burger">
         <!--burger nav menu-->
         <div class="burger-container">
           <div class="burger-icon">
