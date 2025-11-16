@@ -34,7 +34,7 @@
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-htmlhint": "^3.0.0",
     "gulp-image-resize": "^0.13.1",
-    "gulp-imagemin": "^7.1.0",
+    "gulp-imagemin": "^9.2.0",
     "gulp-plumber": "^1.2.1",
     "gulp-prettier": "^3.0.0",
     "gulp-pretty-html": "^2.0.10",
